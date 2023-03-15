@@ -1,0 +1,161 @@
+@import 'variables.css';
+
+/* General */
+* {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    margin: 0;
+    Font-family: 'Segoe UI';
+    margin: auto;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+body::-webkit-scrollbar {
+    width: 1.5vw;
+    background-color: #F5F5F5;
+}
+body::-webkit-scrollbar-thumb {
+    background-image: url("/images/general/scrollbar.jpg");
+    background-size: 300%;
+    background-position: center;
+}
+body::-webkit-scrollbar-thumb:active {
+    background-position: left;
+}
+@keyframes change_color {
+    to {color: var(--main-color);}
+}
+@keyframes change_bgcolor {
+    to {background-color: #A5050A; color: white;}
+}
+
+/* Navigation Bar */
+header {
+    height: 80px;
+}
+#navbar {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    padding: 0 150px;
+    background-color: white;
+    font-weight: bold;
+    opacity: 0.9;
+    box-shadow: 0 0px 3px gray;
+    position: fixed;
+}
+#navbar #logo {
+    width: 30%;
+    height: 75%;
+    overflow-y: hidden;
+    margin: auto;
+}
+#logo a {
+    overflow-y: hidden;
+}
+#logo img {
+    height: 100%;
+}
+#navbar #nav {
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+}
+#navbar a {
+    line-height: 80px;
+}
+#navbar #account {
+    width: 35%;
+    text-align: right;    
+}
+#account a {
+    margin-right: 25px;
+}
+#navbar a:hover {
+    animation: change_color 0.25s forwards;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 150px;
+}
+footer > div {
+    width: 24%;
+}
+footer h3 {
+    color: var(--main-color);
+}
+#footer-description img {
+    width: 20%;
+}
+#footer-menu a {
+    display: inline-block;
+    width: 40%;
+    margin: 10px 0;
+}
+#footer-menu a:hover {
+    animation: change_color 0.25s forwards;
+}
+#footer-contact a {
+    display: block;
+    margin: 10px 0;
+}
+#footer-contact a:hover {
+    animation: change_color 0.25s forwards;
+}
+#footer-contact a svg {
+    color: var(--main-color);
+}
+#footer-subscribe {
+    overflow: visible;
+}
+#footer-subscribe div {
+    overflow: visible;
+}
+#footer-subscribe div a {
+    color: gray;
+    display: inline-block;
+    margin: 0 8px;
+    transform: scale(1.5);
+    overflow: visible;
+}
+#footer-subscribe div .tooltip {
+    visibility: hidden;
+    overflow: visible;
+    position: absolute;
+    left: 50%;
+    bottom: 150%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    line-height: 10px;
+    width: 100px;
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+#footer-subscribe div .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+#footer-subscribe div a:hover {
+    color: var(--main-color);
+}
+#footer-subscribe div a:hover .tooltip {
+    visibility: visible;
+}
