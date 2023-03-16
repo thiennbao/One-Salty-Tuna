@@ -1,20 +1,142 @@
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
-<h1>This is home</h1>
+<!-- Wall -->
+<div id="wall">
+    <div id="wall-content">
+        <h1>One Salty Tuna</h1>
+    </div>
+    <div id="slide">
+        <div id="slide-0"></div>
+        <div id="slide-1"></div>
+        <div id="slide-2"></div>
+    </div>
+    <div id="prev-next">
+        <span class="glyphicon glyphicon-chevron-left" id="wall-prev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+            <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+            </svg></span>
+        <span class="glyphicon glyphicon-chevron-right" id="wall-next"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+            </svg></span>
+    </div>
+    <div id="rings"></div>
+</div>
+
+<!-- About -->
+<section id="about">
+    <h2 class="heading">ONE SALTY TUNA</h2>
+    <p> One salty tuna is a sushi restaurant lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, 
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cintrom dolore eu fugiat nulla pariatur. 
+        Excepteur sint occaecat cupidatat non proident, 
+        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</section>
+
+<!-- Intro Images -->
+<div id="intro-image">
+    <div><div id="intro-image_nigirizushi"></div><span>Nigirizushi</span></div>
+    <div><div id="intro-image_makimono"></div><span>Makimono</span></div>
+    <div><div id="intro-image_tempura"></div><span>Tempura</span></div>
+    <div><div id="intro-image_sashimi"></div><span>Sashimi</span></div>
+</div>
+
+<!-- Menu -->
+<section id="menu">
+    <h2 class="heading">MENU</h2>
+    <div id="dishes">
+        {{!-- {{#each menu}} --}}
+            <div>
+                <img src="{{this.img}}images/general/intro_tempura.jpg" alt="{{this.name}}">
+                <p class="dish-name">{{this.name}}Lorem</p>
+                <p class="describe">{{this.description}}ipsum</p>
+                <p class="price">{{this.cost}}1 $</p>
+            </div>
+        {{!-- {{/each}} --}}
+        <div>
+            <img src="images/general/intro_tempura.jpg" alt="{{this.name}}">
+            <p class="dish-name">{{this.name}}Lorem</p>
+            <p class="describe">{{this.description}}ipsum</p>
+            <p class="price">{{this.cost}}1 $</p>
+        </div>
+        <div>
+            <img src="images/general/intro_tempura.jpg" alt="{{this.name}}">
+            <p class="dish-name">{{this.name}}Lorem</p>
+            <p class="describe">{{this.description}}ipsum</p>
+            <p class="price">{{this.cost}}1 $</p>
+        </div>
+        <div>
+            <img src="images/general/intro_tempura.jpg" alt="{{this.name}}">
+            <p class="dish-name">{{this.name}}Lorem</p>
+            <p class="describe">{{this.description}}ipsum</p>
+            <p class="price">{{this.cost}}1 $</p>
+        </div>
+    </div>
+</section>
+
+<!-- Quality commit  -->
+<div id="quality-commit">
+    <img src="images/general/quality-commit-wall.jpg" alt="">
+    <div>
+        <h3>Quality Commit</h3>
+        <p>One Salty Tuna is committed to bringing users safe, delicious products with health benefits. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    </div>
+</div>
+
+<!-- News -->
+<section id="news">
+    <h2 class="heading">NEWS</h2>
+    <div id="news-item">
+        {{!-- {{#each news}} --}}
+            <div>
+                <img src="{{this.img}}images/general/intro_tempura.jpg" alt="">
+                <h3>{{this.name}}Helo fck you</h3>
+                <p>{{this.date}}Omae wa mou shindeiru</p>
+                <button onclick="newsOpen('{{this._id}}')">Detail</button>
+            </div>
+        {{!-- {{/each}} --}}
+        <div>
+            <img src="images/general/intro_tempura.jpg" alt="">
+            <h3>{{this.name}}Helo fck you</h3>
+            <p>{{this.date}}Omae wa mou shindeiru</p>
+            <button onclick="newsOpen('{{this._id}}')">Detail</button>
+        </div>
+        <div>
+            <img src="images/general/intro_tempura.jpg" alt="">
+            <h3>{{this.name}}Helo fck you</h3>
+            <p>{{this.date}}Omae wa mou shindeiru</p>
+            <button onclick="newsOpen('{{this._id}}')">Detail</button>
+        </div>
+        <div>
+            <img src="images/general/intro_tempura.jpg" alt="">
+            <h3>{{this.name}}Helo fck you</h3>
+            <p>{{this.date}}Omae wa mou shindeiru</p>
+            <button onclick="newsOpen('{{this._id}}')">Detail</button>
+        </div>
+    </div>
+        {{!-- {{#each news}}
+            <div class="news-detail" id="{{this._id}}" style="display: none;">
+                <button class="news-close" onclick="newsClose('{{this._id}}')">X</button>
+                <img src="{{this.img}}" alt="{{this.name}}">
+                <div>
+                    <h3>{{this.name}}</h3>
+                    <p class="news-date">{{this.date}}</p>
+                    <p class="news-content">{{this.content}}</p>
+                </div>
+            </div>
+        {{/each}} --}}
+</section>
+
+<!-- introstrative Images -->
+<div id="outro-image">
+    <div style="background-image: url(images/menu/menu_gunkan-kani.jpg);"></div>
+    <div style="background-image: url(images/menu/menu_sashimi-amaebi.jpg);"></div>
+    <div style="background-image: url(images/menu/menu_makimono-karaisake.jpg);"></div>
+    <div style="background-image: url(images/menu/menu_gunkan-tobikowasabi.jpg);"></div>
+    <div style="background-image: url(images/menu/menu_nigiri-unagi.jpg);"></div>
+    <div style="background-image: url(images/menu/menu_nigiri-amaebi.jpg);"></div>
+</div>
+
+<script src="/javascript/home.js"></script>

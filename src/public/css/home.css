@@ -2,3 +2,321 @@
 .home {
     color: var(--main-color);
 }
+@keyframes wall-load {
+    to {transform: scale(100%) translate(-50%,-50%); opacity: 1;}
+}
+@keyframes prev-in {
+    from {left: -100%;}
+    to {left: 0;}
+}
+@keyframes prev-out {
+    from {left: 0;}
+    to {left: 100%;}
+}
+@keyframes next-in {
+    from {left: 100%;}
+    to {left: 0;}
+}
+@keyframes next-out {
+    from {left: 0;}
+    to {left: -100%;}
+}
+@keyframes prevBtn {
+    from {opacity: 0; transform: translateX(-50%);}
+    to {opacity: 1; transform: translateX(0);}
+}
+@keyframes nextBtn {
+    from {opacity: 0; transform: translateX(50%);}
+    to {opacity: 1; transform: translateX(0);}
+}
+@keyframes zoom-in {
+    from {background-size: 120%;}
+    to {background-size: 135%;}
+}
+@keyframes zoom-out {
+    from {background-size: 135%;}
+    to {background-size: 120%;}
+}
+@keyframes shadow {
+    to {box-shadow: 0 2px 10px gray;}
+}
+@keyframes img-in {
+    from {background-size: 160%;}
+    to {background-size: 180%;}
+}
+@keyframes img-out {
+    from {background-size: 180%;}
+    to {background-size: 160%;}
+}
+
+/* Wallpaper */
+#wall {
+    height: 600px;
+    position: relative;
+    color: white;
+    overflow: visible;
+}
+#wall #wall-content {
+    overflow: visible;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(150%);
+    opacity: 0;
+    z-index: 1;
+}
+#wall h1 {
+    font-size: 65px;
+    font-weight: bold;
+    width: 100%;
+}
+#wall h1::before { 
+    content: 'Sushi restaurant';
+    position: absolute;
+    bottom: 100%;
+    font-size: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#slide {
+    height: 100%;
+    position: relative;
+}
+#slide div {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+#slide-0 {
+    background-image: url(/images/general/wallpaper-0.jpg);
+    filter: brightness(0.5);
+}
+#slide-1 {
+    left: 100%;
+    background-image: url(/images/general/wallpaper-1.jpg);
+    filter: brightness(0.75);
+    background-position: right;
+}
+#slide-2 {
+    left: 100%;
+    background-image: url(/images/general/wallpaper-2.jpg);
+    filter: brightness(0.75);
+}
+#wall #prev-next span {
+    position: absolute;
+    top: 50%;
+    margin: 0 20px;
+    cursor: pointer;
+    opacity: 0;
+}
+#wall #prev-next span:last-child {
+    right: 0;
+}
+#rings {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    user-select: none !important;
+    cursor: pointer;
+}
+#rings span {
+    margin: 4px;
+    position: relative;
+}
+#rings span::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: inline-block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+#wall:hover #wall-prev {
+    animation: prevBtn 1s forwards;
+}
+#wall:hover #wall-next {
+    animation: nextBtn 1s forwards;
+}
+#wall-content {
+    animation: wall-load 1.5s ease forwards;
+}
+
+/* About */
+#about {
+    margin-top: 100px;
+    /* font-size: 14px; */
+}
+#about p {
+    width: 50%;
+}
+
+/* Intro Images */
+#intro-image {
+    height: 25vw;
+    display: flex;
+    font-size: 30px;
+}
+#intro-image > div {
+    width: 25%;
+    text-align: center;
+    color: white;
+    filter: brightness(1);
+}
+#intro-image > div div {
+    background-size: 120%;
+    background-position: center;
+    filter: brightness(0.3);
+    height: 100%;
+}
+#intro-image > div span {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+#intro-image_nigirizushi {
+    background-image: url(/images/general/intro_nigirizushi.jpg);
+}
+#intro-image_makimono {
+    background-image: url(/images/general/intro_makimono.jpg);
+}
+#intro-image_tempura {
+    background-image: url(/images/general/intro_tempura.jpg);
+}
+#intro-image_sashimi {
+    background-image: url(/images/general/intro_sashimi.jpg);
+}
+
+/* Menu */
+#dishes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#dishes > div {
+    width: 24%;
+    height: 400px;
+    border: lightgray solid 1px;
+    margin: 15px 0.5% 0;
+}
+#dishes > div:hover img {
+    animation: dish-hover 0.5s forwards;
+}
+#dishes img {
+    width: 100%;
+    height: 50%;
+}
+#dishes p {
+    margin-left: 10%;
+}
+#dishes .dish-name {
+    font-size: 20px;
+}
+#dishes .describe {
+    font-size: 14px;
+    min-height: 10%;
+}
+#dishes .price {
+    display: inline-block;
+    margin-left: 10%;
+    padding: 8px 20px;
+    border-radius: 10%;
+    color: white;
+    background-color: var(--main-color);
+}
+
+/* Quality Commit */
+#quality-commit {
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    filter: brightness(0.75)
+}
+#quality-commit img {
+    width: 100%;
+    height: 100%;
+}
+#quality-commit div {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 40%;
+}
+#quality-commit h3 {
+    font-size: 25px;
+}
+#quality-commit p {
+    font-size: 15px;
+}
+
+/* News */
+#news-item {
+    display: flex;
+}
+#news-item div {
+    width: 25%;
+    height: 400px;
+    margin: 10px;
+}
+#news-item div:hover {
+    animation: shadow 0.5s forwards;
+}
+#news-item div:hover img {
+    animation: dish-hover 0.5s forwards;
+}
+#news-item img {
+    float: left;
+    width: 100%;
+    height: 250px;
+    margin-right: 5%;
+    filter: brightness(0.8);
+}
+#news-item h3 {
+    margin: 20px 0 0 20px;
+    float: left;
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+}
+#news-item p {
+    float: left;
+    width: 100%;
+    margin: 15px 20px;
+    font-size: 14px;
+    color: gray;
+}
+#news-item button {
+    margin: 0 20px;
+    float: left;
+    width: 80px;
+    height: 30px;
+    border: var(--main-color) solid 2px;
+    color: var(--main-color);
+    background-color: white;
+}
+#news button:hover {
+    animation: button-bgcolor 0.25s forwards;
+}
+
+/* Outro Images */
+#outro-image {
+    display: flex;
+}
+#outro-image div {
+    width: 20vw;
+    height: 20vw;
+    filter: brightness(0.5) !important;
+    background-size: 160%;
+    background-position: center;
+}
+#outro-image div:last-child {
+    display: none;
+}
