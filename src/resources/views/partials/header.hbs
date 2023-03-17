@@ -1,21 +1,25 @@
 <header>
-    <div id="navbar">
-        {{!-- Logo --}}
-        <div id="logo">
-            <a href="\ "><img src="/images/general/logo.png" alt="logo"></a>
-        </div>
-        {{!-- Site navigation --}}
-        <div id="nav">
-            <a href="/ " class="home">HOME</a>
-            <a href="/about" class="about">ABOUT</a>
-            <a href="/menu" class="menu">MENU</a>
-            <a href="/contact" class="contact">CONTACT</a>
-        </div>
-        {{!-- Account --}}
-        <div id="account">
-            <a id="signupNav" href="/auth/signup">SIGN UP</a>
-            <a id="loginNav" href="/auth/login">LOG IN</a>
-            {{!-- <a id="userNav" href="/user/{{username}}">HI, {{username}}</a> --}}
+    <div id="header-container">
+        <div id="navbar" class="grid wide">
+            <div class="row">
+                {{!-- Logo --}}
+                <div id="logo" class="col l-2">
+                    <a href="\ "><img src="/images/general/logo.png" alt="logo"></a>
+                </div>
+                {{!-- Site navigation --}}
+                <div id="nav" class="col l-6 l-o-1 row">
+                    <a href="/ " class="home col l-3">HOME</a>
+                    <a href="/about" class="about col l-3">ABOUT</a>
+                    <a href="/menu" class="menu col l-3">MENU</a>
+                    <a href="/contact" class="contact col l-3">CONTACT</a>
+                </div>
+                {{!-- Account --}}
+                <div id="account" class="col l-2 l-o-1 row">
+                    <a id="signupNav" href="/auth/signup" class="col l-6">SIGN UP</a>
+                    <a id="loginNav" href="/auth/login" class="col l-6">LOG IN</a>
+                    {{!-- <a id="userNav" href="/user/{{username}}">HI, {{username}}</a> --}}
+                </div>
+            </div>
         </div>
     </div>
 </header>

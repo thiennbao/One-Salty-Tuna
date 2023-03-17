@@ -69,6 +69,7 @@
     font-size: 65px;
     font-weight: bold;
     width: 100%;
+    text-align: center;
 }
 #wall h1::before { 
     content: 'Sushi restaurant';
@@ -110,6 +111,7 @@
     margin: 0 20px;
     cursor: pointer;
     opacity: 0;
+    user-select: none;
 }
 #wall #prev-next span:last-child {
     right: 0;
@@ -148,19 +150,10 @@
     animation: wall-load 1.5s ease forwards;
 }
 
-/* About */
-#about {
-    margin-top: 100px;
-    /* font-size: 14px; */
-}
-#about p {
-    width: 50%;
-}
-
 /* Intro Images */
 #intro-image {
     height: 25vw;
-    display: flex;
+    max-height: 500px;
     font-size: 30px;
 }
 #intro-image > div {
@@ -194,16 +187,9 @@
 }
 
 /* Menu */
-#dishes {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-#dishes > div {
-    width: 24%;
+#dishes > div > div {
     height: 400px;
     border: lightgray solid 1px;
-    margin: 15px 0.5% 0;
 }
 #dishes > div:hover img {
     animation: dish-hover 0.5s forwards;
@@ -258,15 +244,10 @@
 }
 
 /* News */
-#news-item {
-    display: flex;
+#news-item > div {
+    padding: 10px;
 }
-#news-item div {
-    width: 25%;
-    height: 400px;
-    margin: 10px;
-}
-#news-item div:hover {
+#news-item > div > div:hover {
     animation: shadow 0.5s forwards;
 }
 #news-item div:hover img {
@@ -280,21 +261,21 @@
     filter: brightness(0.8);
 }
 #news-item h3 {
-    margin: 20px 0 0 20px;
+    margin: 20px 20px 5px;
     float: left;
     width: 100%;
     font-weight: bold;
     font-size: 18px;
 }
 #news-item p {
+    margin: 0 20px;
     float: left;
     width: 100%;
-    margin: 15px 20px;
     font-size: 14px;
     color: gray;
 }
 #news-item button {
-    margin: 0 20px;
+    margin: 20px;
     float: left;
     width: 80px;
     height: 30px;
@@ -307,16 +288,10 @@
 }
 
 /* Outro Images */
-#outro-image {
-    display: flex;
-}
 #outro-image div {
-    width: 20vw;
     height: 20vw;
+    max-height: 500px;
     filter: brightness(0.5) !important;
     background-size: 160%;
     background-position: center;
-}
-#outro-image div:last-child {
-    display: none;
 }

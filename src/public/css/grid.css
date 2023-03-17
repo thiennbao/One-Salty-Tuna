@@ -1,0 +1,317 @@
+
+.grid {
+    width: 100%;
+    display: block;
+}
+.wide {
+    max-width: 1200px;
+    margin: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+}
+.col {
+    padding: 0 12px;
+}
+.row.no-gutters {
+    margin: 0;
+}
+.row.no-gutters .col {
+    padding: 0;
+}
+.l-0 {
+    display: none;
+}
+.l-1 {
+    flex: 0 0 calc(100% / 12 * 1);
+    max-width: calc(100% / 12 * 1);
+}
+.l-2 {
+    flex: 0 0 calc(100% / 12 * 2);
+    max-width: calc(100% / 12 * 2);
+}
+.l-2-4 {
+    flex: 0 0 calc(100% / 12 * 2.4);
+    max-width: calc(100% / 12 * 2.4);
+}
+.l-3 {
+    flex: 0 0 calc(100% / 12 * 3);
+    max-width: calc(100% / 12 * 3);
+}
+.l-4 {
+    flex: 0 0 calc(100% / 12 * 4);
+    max-width: calc(100% / 12 * 4);
+}
+.l-5 {
+    flex: 0 0 calc(100% / 12 * 5);
+    max-width: calc(100% / 12 * 5);
+}
+.l-6 {
+    flex: 0 0 calc(100% / 12 * 6);
+    max-width: calc(100% / 12 * 6);
+}
+.l-7 {
+    flex: 0 0 calc(100% / 12 * 7);
+    max-width: calc(100% / 12 * 7);
+}
+.l-8 {
+    flex: 0 0 calc(100% / 12 * 8);
+    max-width: calc(100% / 12 * 8);
+}
+.l-9 {
+    flex: 0 0 calc(100% / 12 * 9);
+    max-width: calc(100% / 12 * 9);
+}
+.l-10 {
+    flex: 0 0 calc(100% / 12 * 10);
+    max-width: calc(100% / 12 * 10);
+}
+.l-11 {
+    flex: 0 0 calc(100% / 12 * 11);
+    max-width: calc(100% / 12 * 11);
+}
+.l-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.l-o-1 {
+    margin-left: calc(100% / 12 * 1);
+}
+.l-o-2 {
+    margin-left: calc(100% / 12 * 2);
+}
+.l-o-3 {
+    margin-left: calc(100% / 12 * 3);
+}
+.l-o-4 {
+    margin-left: calc(100% / 12 * 4);
+}
+.l-o-5 {
+    margin-left: calc(100% / 12 * 5);
+}
+.l-o-6 {
+    margin-left: calc(100% / 12 * 6);
+}
+.l-o-7 {
+    margin-left: calc(100% / 12 * 7);
+}
+.l-o-8 {
+    margin-left: calc(100% / 12 * 8);
+}
+.l-o-9 {
+    margin-left: calc(100% / 12 * 9);
+}
+.l-o-10 {
+    margin-left: calc(100% / 12 * 10);
+}
+.l-o-11 {
+    margin-left: calc(100% / 12 * 11);
+}
+
+/* For PC low */
+@media (min-width: 1023px) and (max-width: 1239px) {
+    .wide {
+        width: 984px;
+    }
+}
+
+/* For Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .wide {
+        width: 664px;
+    }
+    .row {
+        margin: 0 -8px;
+    }
+    .col {
+        padding: 0 8px;
+    }
+    .m-0 {
+        display: none;
+    }
+    .m-1 {
+        flex: 0 0 calc(100% / 12 * 1);
+        max-width: calc(100% / 12 * 1);
+    }
+    .m-2 {
+        flex: 0 0 calc(100% / 12 * 2);
+        max-width: calc(100% / 12 * 2);
+    }
+    .m-2-4 {
+        flex: 0 0 calc(100% / 12 * 2.4);
+        max-width: calc(100% / 12 * 2.4);
+    }
+    .m-3 {
+        flex: 0 0 calc(100% / 12 * 3);
+        max-width: calc(100% / 12 * 3);
+    }
+    .m-4 {
+        flex: 0 0 calc(100% / 12 * 4);
+        max-width: calc(100% / 12 * 4);
+    }
+    .m-5 {
+        flex: 0 0 calc(100% / 12 * 5);
+        max-width: calc(100% / 12 * 5);
+    }
+    .m-6 {
+        flex: 0 0 calc(100% / 12 * 6);
+        max-width: calc(100% / 12 * 6);
+    }
+    .m-7 {
+        flex: 0 0 calc(100% / 12 * 7);
+        max-width: calc(100% / 12 * 7);
+    }
+    .m-8 {
+        flex: 0 0 calc(100% / 12 * 8);
+        max-width: calc(100% / 12 * 8);
+    }
+    .m-9 {
+        flex: 0 0 calc(100% / 12 * 9);
+        max-width: calc(100% / 12 * 9);
+    }
+    .m-10 {
+        flex: 0 0 calc(100% / 12 * 10);
+        max-width: calc(100% / 12 * 10);
+    }
+    .m-11 {
+        flex: 0 0 calc(100% / 12 * 11);
+        max-width: calc(100% / 12 * 11);
+    }
+    .m-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .m-o-1 {
+        margin-left: calc(100% / 12 * 1);
+    }
+    .m-o-2 {
+        margin-left: calc(100% / 12 * 2);
+    }
+    .m-o-3 {
+        margin-left: calc(100% / 12 * 3);
+    }
+    .m-o-4 {
+        margin-left: calc(100% / 12 * 4);
+    }
+    .m-o-5 {
+        margin-left: calc(100% / 12 * 5);
+    }
+    .m-o-6 {
+        margin-left: calc(100% / 12 * 6);
+    }
+    .m-o-7 {
+        margin-left: calc(100% / 12 * 7);
+    }
+    .m-o-8 {
+        margin-left: calc(100% / 12 * 8);
+    }
+    .m-o-9 {
+        margin-left: calc(100% / 12 * 9);
+    }
+    .m-o-10 {
+        margin-left: calc(100% / 12 * 10);
+    }
+    .m-o-11 {
+        margin-left: calc(100% / 12 * 11);
+    }
+}
+
+/* For Mobile */
+@media (max-width: 739px) {
+    .row {
+        margin: 0 -4px;
+    }
+    .col {
+        padding: 0 4px;
+    }
+    .s-0 {
+        display: none;
+    }
+    .s-1 {
+        flex: 0 0 calc(100% / 12 * 1);
+        max-width: calc(100% / 12 * 1);
+    }
+    .s-2 {
+        flex: 0 0 calc(100% / 12 * 2);
+        max-width: calc(100% / 12 * 2);
+    }
+    .s-2-4 {
+        flex: 0 0 calc(100% / 12 * 2.4);
+        max-width: calc(100% / 12 * 2.4);
+    }
+    .s-3 {
+        flex: 0 0 calc(100% / 12 * 3);
+        max-width: calc(100% / 12 * 3);
+    }
+    .s-4 {
+        flex: 0 0 calc(100% / 12 * 4);
+        max-width: calc(100% / 12 * 4);
+    }
+    .s-5 {
+        flex: 0 0 calc(100% / 12 * 5);
+        max-width: calc(100% / 12 * 5);
+    }
+    .s-6 {
+        flex: 0 0 calc(100% / 12 * 6);
+        max-width: calc(100% / 12 * 6);
+    }
+    .s-7 {
+        flex: 0 0 calc(100% / 12 * 7);
+        max-width: calc(100% / 12 * 7);
+    }
+    .s-8 {
+        flex: 0 0 calc(100% / 12 * 8);
+        max-width: calc(100% / 12 * 8);
+    }
+    .s-9 {
+        flex: 0 0 calc(100% / 12 * 9);
+        max-width: calc(100% / 12 * 9);
+    }
+    .s-10 {
+        flex: 0 0 calc(100% / 12 * 10);
+        max-width: calc(100% / 12 * 10);
+    }
+    .s-11 {
+        flex: 0 0 calc(100% / 12 * 11);
+        max-width: calc(100% / 12 * 11);
+    }
+    .s-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .s-o-1 {
+        margin-left: calc(100% / 12 * 1);
+    }
+    .s-o-2 {
+        margin-left: calc(100% / 12 * 2);
+    }
+    .s-o-3 {
+        margin-left: calc(100% / 12 * 3);
+    }
+    .s-o-4 {
+        margin-left: calc(100% / 12 * 4);
+    }
+    .s-o-5 {
+        margin-left: calc(100% / 12 * 5);
+    }
+    .s-o-6 {
+        margin-left: calc(100% / 12 * 6);
+    }
+    .s-o-7 {
+        margin-left: calc(100% / 12 * 7);
+    }
+    .s-o-8 {
+        margin-left: calc(100% / 12 * 8);
+    }
+    .s-o-9 {
+        margin-left: calc(100% / 12 * 9);
+    }
+    .s-o-10 {
+        margin-left: calc(100% / 12 * 10);
+    }
+    .s-o-11 {
+        margin-left: calc(100% / 12 * 11);
+    }
+} 
