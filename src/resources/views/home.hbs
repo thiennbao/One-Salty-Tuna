@@ -8,7 +8,7 @@
         <div id="slide-1"></div>
         <div id="slide-2"></div>
     </div>
-    <div id="prev-next">
+    <div id="prev-next" class="no_highlights">
         <span class="glyphicon glyphicon-chevron-left" id="wall-prev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
             <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
             </svg></span>
@@ -16,14 +16,14 @@
             <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
             </svg></span>
     </div>
-    <div id="rings"></div>
+    <div id="rings" class="no_highlights"></div>
 </div>
 
 <!-- About -->
 <section id="about" class="grid wide">
     <h2 class="heading">ONE SALTY TUNA</h2>
     <div class="row">
-        <p class="col l-6"> One salty tuna is a sushi restaurant lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        <p class="col l-6 m-9 s-12"> One salty tuna is a sushi restaurant lorem ipsum dolor sit amet, consectetur adipiscing elit, 
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             Ut enim ad minim veniam, 
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -35,18 +35,18 @@
 
 <!-- Intro Images -->
 <div id="intro-image" class="row no-gutters">
-    <div class="col l-3"><div id="intro-image_nigirizushi"></div><span>Nigirizushi</span></div>
-    <div class="col l-3"><div id="intro-image_makimono"></div><span>Makimono</span></div>
-    <div class="col l-3"><div id="intro-image_tempura"></div><span>Tempura</span></div>
-    <div class="col l-3"><div id="intro-image_sashimi"></div><span>Sashimi</span></div>
+    <div class="col l-3 m-3 s-12"><div id="intro-image_nigirizushi"></div><span>Nigirizushi</span></div>
+    <div class="col l-3 m-3 s-12"><div id="intro-image_makimono"></div><span>Makimono</span></div>
+    <div class="col l-3 m-3 s-12"><div id="intro-image_tempura"></div><span>Tempura</span></div>
+    <div class="col l-3 m-3 s-12"><div id="intro-image_sashimi"></div><span>Sashimi</span></div>
 </div>
 
 <!-- Menu -->
 <section id="menu" class="grid wide">
     <h2 class="heading">MENU</h2>
-    <div id="dishes" class="row">
+    <div id="dishes" class="row vertical-gutters">
         {{!-- {{#each menu}} --}}
-            <div class="col l-3">
+            <div class="col l-3 m-4 s-6">
                 <div>
                     <img src="{{this.img}}images/general/intro_tempura.jpg" alt="{{this.name}}">
                     <p class="dish-name">{{this.name}}Lorem</p>
@@ -55,7 +55,7 @@
                 </div>
             </div>
         {{!-- {{/each}} --}}
-        <div class="col l-3">
+        <div class="col l-3 m-4 s-6">
             <div>
                 <img src="{{this.img}}images/general/intro_tempura.jpg" alt="{{this.name}}">
                 <p class="dish-name">{{this.name}}Lorem</p>
@@ -63,7 +63,7 @@
                 <p class="price">{{this.cost}}1 $</p>
             </div>
         </div>
-        <div class="col l-3">
+        <div class="col l-3 m-4 s-6">
             <div>
                 <img src="{{this.img}}images/general/intro_tempura.jpg" alt="{{this.name}}">
                 <p class="dish-name">{{this.name}}Lorem</p>
@@ -71,7 +71,7 @@
                 <p class="price">{{this.cost}}1 $</p>
             </div>
         </div>
-        <div class="col l-3">
+        <div class="col l-3 m-4 s-6">
             <div>
                 <img src="{{this.img}}images/general/intro_tempura.jpg" alt="{{this.name}}">
                 <p class="dish-name">{{this.name}}Lorem</p>
@@ -100,38 +100,53 @@
     <h2 class="heading">NEWS</h2>
     <div id="news-item" class="row">
         {{!-- {{#each news}} --}}
-            <div class="col l-3">
-                <div>
+        <div class="col l-3 m-4 s-12">
+            <div class="row no-gutters">
+                <div class="news-image col l-12 m-12 s-6">
                     <img src="{{this.img}}images/general/intro_tempura.jpg" alt="">
+                </div>
+                <div class="news-title col l-12 m-12 s-6">
                     <h3>{{this.name}}Helo fck you</h3>
-                    <p>{{this.date}}Omae wa mou shindeiru</p>
+                    <p>{{this.date}}20 - 10 - 2022</p>
                     <button onclick="newsOpen('{{this._id}}')">Detail</button>
                 </div>
             </div>
-
+        </div>
         {{!-- {{/each}} --}}
-        <div class="col l-3">
-            <div>
-                <img src="{{this.img}}images/general/intro_tempura.jpg" alt="">
-                <h3>{{this.name}}Helo fck you</h3>
-                <p>{{this.date}}Omae wa mou shindeiru</p>
-                <button onclick="newsOpen('{{this._id}}')">Detail</button>
+        <div class="col l-3 m-4 s-12">
+            <div class="row no-gutters">
+                <div class="news-image col l-12 m-12 s-6">
+                    <img src="{{this.img}}images/general/intro_tempura.jpg" alt="">
+                </div>
+                <div class="news-title col l-12 m-12 s-6">
+                    <h3>{{this.name}}Helo fck you</h3>
+                    <p>{{this.date}}20 - 10 - 2022</p>
+                    <button onclick="newsOpen('{{this._id}}')">Detail</button>
+                </div>
             </div>
         </div>
-        <div class="col l-3">
-            <div>
-                <img src="{{this.img}}images/general/intro_tempura.jpg" alt="">
-                <h3>{{this.name}}Helo fck you</h3>
-                <p>{{this.date}}Omae wa mou shindeiru</p>
-                <button onclick="newsOpen('{{this._id}}')">Detail</button>
+        <div class="col l-3 m-4 s-12">
+            <div class="row no-gutters">
+                <div class="news-image col l-12 m-12 s-6">
+                    <img src="{{this.img}}images/general/intro_tempura.jpg" alt="">
+                </div>
+                <div class="news-title col l-12 m-12 s-6">
+                    <h3>{{this.name}}Helo fck you</h3>
+                    <p>{{this.date}}20 - 10 - 2022</p>
+                    <button onclick="newsOpen('{{this._id}}')">Detail</button>
+                </div>
             </div>
         </div>
-        <div class="col l-3">
-            <div>
-                <img src="{{this.img}}images/general/intro_tempura.jpg" alt="">
-                <h3>{{this.name}}Helo fck you</h3>
-                <p>{{this.date}}Omae wa mou shindeiru</p>
-                <button onclick="newsOpen('{{this._id}}')">Detail</button>
+        <div class="col l-3 m-4 s-12">
+            <div class="row no-gutters">
+                <div class="news-image col l-12 m-12 s-6">
+                    <img src="{{this.img}}images/general/intro_tempura.jpg" alt="">
+                </div>
+                <div class="news-title col l-12 m-12 s-6">
+                    <h3>{{this.name}}Helo fck you</h3>
+                    <p>{{this.date}}20 - 10 - 2022</p>
+                    <button onclick="newsOpen('{{this._id}}')">Detail</button>
+                </div>
             </div>
         </div>
     </div>
@@ -150,12 +165,12 @@
 
 <!-- introstrative Images -->
 <div id="outro-image" class="row">
-    <div class="col l-2-4" style="background-image: url(images/menu/menu_gunkan-kani.jpg);"></div>
-    <div class="col l-2-4" style="background-image: url(images/menu/menu_sashimi-amaebi.jpg);"></div>
-    <div class="col l-2-4" style="background-image: url(images/menu/menu_makimono-karaisake.jpg);"></div>
-    <div class="col l-2-4" style="background-image: url(images/menu/menu_gunkan-tobikowasabi.jpg);"></div>
-    <div class="col l-2-4" style="background-image: url(images/menu/menu_nigiri-unagi.jpg);"></div>
-    <div class="col l-0" style="background-image: url(images/menu/menu_nigiri-amaebi.jpg);"></div>
+    <div class="col l-2-4 m-2-4 s-6" style="background-image: url(images/menu/menu_gunkan-kani.jpg);"></div>
+    <div class="col l-2-4 m-2-4 s-6" style="background-image: url(images/menu/menu_sashimi-amaebi.jpg);"></div>
+    <div class="col l-2-4 m-2-4 s-6" style="background-image: url(images/menu/menu_makimono-karaisake.jpg);"></div>
+    <div class="col l-2-4 m-2-4 s-6" style="background-image: url(images/menu/menu_gunkan-tobikowasabi.jpg);"></div>
+    <div class="col l-2-4 m-2-4 s-6" style="background-image: url(images/menu/menu_nigiri-unagi.jpg);"></div>
+    <div class="col l-0 m-0 s-6" style="background-image: url(images/menu/menu_nigiri-amaebi.jpg);"></div>
 </div>
 
 <script src="/javascript/home.js"></script>

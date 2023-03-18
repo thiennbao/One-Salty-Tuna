@@ -3,21 +3,48 @@
         <div id="navbar" class="grid wide">
             <div class="row">
                 {{!-- Logo --}}
-                <div id="logo" class="col l-2">
-                    <a href="\ "><img src="/images/general/logo.png" alt="logo"></a>
+                <div id="logo" class="col l-2 m-2 s-o-1 s-9">
+                    <img src="/images/general/logo.png" alt="logo">
                 </div>
                 {{!-- Site navigation --}}
-                <div id="nav" class="col l-6 l-o-1 row">
+                <div id="nav" class="col l-o-1 l-5 m-6 s-0 row">
                     <a href="/ " class="home col l-3">HOME</a>
                     <a href="/about" class="about col l-3">ABOUT</a>
                     <a href="/menu" class="menu col l-3">MENU</a>
                     <a href="/contact" class="contact col l-3">CONTACT</a>
                 </div>
                 {{!-- Account --}}
-                <div id="account" class="col l-2 l-o-1 row">
+                <div id="account" class="col l-o-1 l-3 m-o-1 m-3 s-0 row">
                     <a id="signupNav" href="/auth/signup" class="col l-6">SIGN UP</a>
                     <a id="loginNav" href="/auth/login" class="col l-6">LOG IN</a>
                     {{!-- <a id="userNav" href="/user/{{username}}">HI, {{username}}</a> --}}
+                </div>
+                <div id="nav-menu-btn" class="l-0 m-0 s-2">
+                    <label for="check-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                    </label>
+                    <input type="checkbox" id="check-btn" class="">
+                    <div id="nav-menu">
+                        <label for="check-btn" id="menu-close">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </label>
+                        <img id="menu-logo" src="/images/general/logo.png" alt="logo">
+                        <div id="menu-account">
+                            <a id="signupNav" href="/auth/signup">SIGN UP</a>
+                            <a id="loginNav" href="/auth/login">LOG IN</a>
+                        </div>
+                        <div id="menu-navbar">
+                            <a href="/ " class="home">HOME</a>
+                            <a href="/about" class="about">ABOUT</a>
+                            <a href="/menu" class="menu">MENU</a>
+                            <a href="/contact" class="contact">CONTACT</a>
+                        </div>
+                    </div>
+                    <label for="check-btn" id="overlay"></label>
                 </div>
             </div>
         </div>

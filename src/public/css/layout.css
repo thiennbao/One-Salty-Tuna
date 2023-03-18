@@ -29,6 +29,15 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:active {
     background-position: left;
 }
+.no_highlights {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 @keyframes change_color {
     to {color: var(--main-color);}
 }
@@ -60,15 +69,15 @@ body::-webkit-scrollbar-thumb:active {
 /* Navigation Bar */
 header {
     height: 80px;
+    text-align: center;
 }
 #header-container {
     position: fixed;
     width: 100%;
     height: 80px;
-    z-index: 1;
+    z-index: 2;
     box-shadow: 0 0px 3px gray;
-    background-color: white;
-    opacity: 0.9;
+    background-color: rgba(255, 255, 255, 0.9);
     font-weight: bold;
 }
 #header-container div {
@@ -76,16 +85,14 @@ header {
 }
 #navbar #logo {
     overflow-y: hidden;
+    display: flex;
 }
 #logo img {
-    height: 100%;
-    padding: 5% 0;
+    height: 80%;
+    margin: auto 0;
 }
 #navbar a {
     line-height: 80px;
-}
-#navbar a:hover {
-    animation: change_color 0.25s forwards;
 }
 
 /* Footer */
@@ -93,7 +100,11 @@ footer h3 {
     color: var(--main-color);
 }
 #footer-container {
-    padding: 50px 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#footer-container > div {
+    overflow: hidden;
 }
 #footer-description img {
     width: 20%;
@@ -103,15 +114,9 @@ footer h3 {
     width: 40%;
     margin: 5px 0;
 }
-#footer-menu a:hover {
-    animation: change_color 0.25s forwards;
-}
 #footer-contact a {
     display: block;
     margin: 10px 0;
-}
-#footer-contact a:hover {
-    animation: change_color 0.25s forwards;
 }
 #footer-contact a svg {
     color: var(--main-color);
@@ -160,4 +165,100 @@ footer h3 {
 }
 #footer-subscribe div a:hover .tooltip {
     visibility: visible;
+}
+
+/* For PC */
+@media (min-width: 1024px) {
+    #navbar a:hover {
+        animation: change_color 0.25s forwards;
+    }
+    #footer-menu a:hover {
+        animation: change_color 0.25s forwards;
+    }
+    #footer-contact a:hover {
+        animation: change_color 0.25s forwards;
+    }
+}
+
+/* For Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    header {
+        font-size: 15px;
+    }
+    #navbar #logo img {
+        height: 70%;
+    }
+    #footer-subscribe div a {
+        margin-right: 15px;
+    }
+}
+
+/* For Mobile */
+@media (max-width: 739px) {
+    header {
+        font-size: 12px;
+    }
+    #nav-menu-btn svg {
+        display: block;
+        width: 30px;
+        height: 100%;
+    }
+    #check-btn {
+        display: none;
+    }
+    #nav-menu {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 250px;
+        max-width: 100%;
+        height: 100%;
+        background-color: white;
+        z-index: 3;
+        padding: 20px;
+        transform: translateX(100%);
+        transition: transform 0.5s;
+    }
+    #menu-logo {
+        height: 60px;
+    }
+    #menu-close {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+    }
+    #nav-menu div {
+        height: auto;
+        margin-top: 20px;
+        border-bottom: lightgray solid 1px;
+    }
+    #nav-menu a {
+        display: inline-block;
+        width: 100%;
+        line-height: 0;
+        padding: 20px;
+        text-align: left;
+    }
+    #overlay {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0;
+        z-index: 2;
+        transform: translateX(100%);
+        transition: opacity 0.5s;
+    }
+    #check-btn:checked ~ #nav-menu {
+        transform: translateX(0);
+    }
+    #check-btn:checked ~ #overlay {
+        transform: translateX(0);
+        opacity: 0.6;
+    }
+    #footer-description img {
+        max-width: 70px;
+    }
 }
