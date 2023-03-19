@@ -7,6 +7,13 @@ class siteController {
             page: "home"
         })
     }
+
+    // About
+    about(req, res) {
+        res.render('about', {
+            page: 'about'
+        })
+    }
 }
 
 module.exports = new siteController

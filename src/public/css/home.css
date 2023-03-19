@@ -277,7 +277,7 @@
     background-position: center;
 }
 
-/* For PC low */
+/* For PC */
 @media (min-width: 1024px) {
     #wall:hover #wall-prev {
         animation: prevBtn 1s forwards;

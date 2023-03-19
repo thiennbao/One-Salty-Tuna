@@ -10,13 +10,6 @@ body {
     Font-family: 'Segoe UI';
     margin: auto;
 }
-a {
-    text-decoration: none;
-    color: black;
-}
-section {
-    padding: 50px 0;
-}
 body::-webkit-scrollbar {
     width: 1.5vw;
     background-color: #F5F5F5;
@@ -37,6 +30,32 @@ body::-webkit-scrollbar-thumb:active {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+section {
+    padding: 50px 0;
+}
+[id$=wallpaper] {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+[id$=wallpaper] #wallpaper-image {
+    background-image: url("/images/general/wallpaper-0.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.25);
+}
+[id$=wallpaper] h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -100%);
+    color: white;
 }
 @keyframes change_color {
     to {color: var(--main-color);}

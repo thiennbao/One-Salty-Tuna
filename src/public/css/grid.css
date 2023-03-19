@@ -21,7 +21,7 @@
 /* For PC */
 @media (min-width: 1023px) {
     .wide {
-        max-width: 1200px;
+        width: 1200px;
     }
     .row {
         margin: 0 -12px;
