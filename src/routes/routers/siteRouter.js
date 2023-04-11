@@ -6,5 +6,6 @@ const siteController = require('../../app/controllers/siteController')
 // Site
 router.get('/', siteController.home)
 router.get('/about', siteController.about)
+router.get('/menu', siteController.menu)
 
 module.exports = router

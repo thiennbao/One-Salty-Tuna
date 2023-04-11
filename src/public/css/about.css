@@ -3,6 +3,12 @@
     color: var(--main-color);
 }
 
+/* Wall */
+#wallpaper-image {
+    background-image: url("/images/general/wallpaper-0.jpg");
+    filter: brightness(0.25);
+}
+
 /* Count */
 #about-count {
     position: relative;
@@ -11,6 +17,7 @@
     color: white;
 }
 #about-count img {
+    width: 100%;
     filter: brightness(0.5);
 }
 #about-count div.gird {

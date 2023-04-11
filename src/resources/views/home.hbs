@@ -45,40 +45,16 @@
 <section id="menu" class="grid wide">
     <h2 class="heading">MENU</h2>
     <div id="dishes" class="row vertical-gutters">
-        {{!-- {{#each menu}} --}}
+        {{#each dish}}
             <div class="col l-3 m-4 s-6">
                 <div>
-                    <img src="{{this.img}}images/general/intro_tempura.jpg" alt="{{this.name}}">
-                    <p class="dish-name">{{this.name}}Lorem</p>
-                    <p class="describe">{{this.description}}ipsum</p>
-                    <p class="price">{{this.cost}}1 $</p>
+                    <img src="{{this.image}}" alt="{{this.name}}">
+                    <p class="dish-name">{{this.name}}</p>
+                    <p class="describe">{{this.description}}</p>
+                    <p class="price">{{this.cost}} $</p>
                 </div>
             </div>
-        {{!-- {{/each}} --}}
-        <div class="col l-3 m-4 s-6">
-            <div>
-                <img src="{{this.img}}images/general/intro_tempura.jpg" alt="{{this.name}}">
-                <p class="dish-name">{{this.name}}Lorem</p>
-                <p class="describe">{{this.description}}ipsum</p>
-                <p class="price">{{this.cost}}1 $</p>
-            </div>
-        </div>
-        <div class="col l-3 m-4 s-6">
-            <div>
-                <img src="{{this.img}}images/general/intro_tempura.jpg" alt="{{this.name}}">
-                <p class="dish-name">{{this.name}}Lorem</p>
-                <p class="describe">{{this.description}}ipsum</p>
-                <p class="price">{{this.cost}}1 $</p>
-            </div>
-        </div>
-        <div class="col l-3 m-4 s-6">
-            <div>
-                <img src="{{this.img}}images/general/intro_tempura.jpg" alt="{{this.name}}">
-                <p class="dish-name">{{this.name}}Lorem</p>
-                <p class="describe">{{this.description}}ipsum</p>
-                <p class="price">{{this.cost}}1 $</p>
-            </div>
-        </div>
+        {{/each}}
     </div>
 </section>
 

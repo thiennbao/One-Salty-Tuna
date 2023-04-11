@@ -40,14 +40,6 @@
 @keyframes shadow {
     to {box-shadow: 0 2px 10px gray;}
 }
-@keyframes img-in {
-    from {background-size: 160%;}
-    to {background-size: 180%;}
-}
-@keyframes img-out {
-    from {background-size: 180%;}
-    to {background-size: 160%;}
-}
 
 /* Wallpaper */
 #wall {
@@ -347,5 +339,4 @@
     #quality-commit div {
         width: 60%;
     }
-
 }

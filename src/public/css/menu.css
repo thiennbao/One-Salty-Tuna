@@ -1,0 +1,158 @@
+
+.menu {
+    color: var(--main-color);
+}
+
+/* Wall */
+#wallpaper-image {
+    background-image: url("/images/general/wallpaper-2.jpg");
+    filter: brightness(0.7);
+}
+
+/* Menu */
+#dishes > div > div {
+    border: lightgray solid 1px;
+}
+#dishes img {
+    width: 100%;
+}
+#dishes p {
+    margin-left: 10%;
+}
+#dishes .dish-name {
+    font-size: 20px;
+}
+#dishes .describe {
+    font-size: 14px;
+    height: 40px;
+}
+#dishes .price {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 10%;
+    color: white;
+    background-color: var(--main-color);
+}
+#dishes .pick {
+    float: right;
+    width: 60%;
+    text-align: center;
+    
+}
+#dishes .pick p {
+    display: inline-block;
+    width: 34px;
+    line-height: 30px;
+    border: var(--main-color) solid 2px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 16px 3px;
+    cursor: pointer;
+}
+
+/* Order */
+#cart {
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('/images/general/wallpaper-2.jpg');
+    background-position: center;
+    margin: 100px 0;
+}
+#cart h3 {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+}
+#cart svg {
+    transform: scale(3) translateY(-4px);
+    margin-left: 30px;
+}
+#cart-container {
+    position: relative;
+    width: 60%;
+    margin: auto;
+    padding: 3% 5% 10%;
+    border: var(--main-color) solid 3px;
+}
+#cart-table thead, tfoot {
+    background-color: var(--main-color);
+    width: 100%;
+    display: inline-block;
+    padding: 0 10px;
+}
+#cart-table tbody {
+    width: 100%;
+    display: inline-block;
+}
+#cart-table tr {
+    line-height: 40px;
+    padding: 0 10px;
+}
+#cart-table tbody tr {
+    background-color: white;
+}
+#cart-table tbody tr:nth-child(even) {
+    background-color: #F2F2F2;
+}
+#cart #submit {
+    background-color: var(--main-color);
+    color: white;
+    width: 40%;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    bottom: 2%;
+    transform: translateX(-50%);
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+/* Outro Images */
+#outro-image div {
+    height: 20vw;
+    max-height: 500px;
+    filter: brightness(0.5) !important;
+    background-size: 160%;
+    background-position: center;
+}
+
+/* For PC */
+@media (min-width: 1024px) {
+    #dishes > div:hover img {
+        animation: dish-hover 0.5s forwards;
+    }
+}
+
+/* For Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    #dishes .pick p {
+        width: 30px;
+        line-height: 26px;
+    }
+    #cart-container {
+        width: 80%;
+    }
+
+}
+
+/* For Mobile */
+@media (max-width: 739px) {
+    #dishes .price {
+        width: 90%;
+        margin: 5%;
+        border-radius: 5px;
+    }
+    #dishes .pick {
+        width: 100%;
+        margin: 0;
+    }
+    #dishes .pick p {
+        width: 25%;
+        border-radius: 5px;
+    }
+    #cart-container {
+        width: 95%;
+        padding: 3% 0 20%;
+    }
+}

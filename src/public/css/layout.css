@@ -44,11 +44,9 @@ section {
     overflow: hidden;
 }
 [id$=wallpaper] #wallpaper-image {
-    background-image: url("/images/general/wallpaper-0.jpg");
     background-size: cover;
     width: 100%;
     height: 100%;
-    filter: brightness(0.25);
 }
 [id$=wallpaper] h1 {
     position: absolute;
@@ -68,6 +66,14 @@ section {
 }
 @keyframes dish-hover {
     to {filter: brightness(0.6);}
+}
+@keyframes img-in {
+    from {background-size: 160%;}
+    to {background-size: 180%;}
+}
+@keyframes img-out {
+    from {background-size: 180%;}
+    to {background-size: 160%;}
 }
 
 

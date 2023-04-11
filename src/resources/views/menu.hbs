@@ -1,0 +1,71 @@
+<!-- Wall -->
+<div id="menu-wallpaper">
+    <div id="wallpaper-image"></div>
+    <h1>MENU</h1>
+</div>
+
+<!-- Menu -->
+<section id="menu-menu" class="grid wide">
+    <h2 class="heading">MENU</h2>
+    
+    <div id="dishes" class="row vertical-gutters">
+        {{#each dish}}
+            <div class="{{this.type}} col l-3 m-4 s-6">
+                <div>
+                    <img src="{{this.image}}" alt="{{this.name}}">
+                    <p class="dish-name">{{this.name}}</p>
+                    <p class="describe">{{this.description}}</p>
+                    <p class="price">{{this.cost}} $</p>
+                    <div class="pick"><p>-</p><p>0</p><p>+</p></div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</section>
+
+<!-- Order -->
+<section id="cart">
+    <div id="cart-container">
+        <h3>
+            <span>CART</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+            </svg>
+        </h3>
+
+        <table id="cart-table" class="grid">
+            <thead>
+                <tr class="row">
+                    <td class="col l-1 m-1 s-1">No</td>
+                    <td class="col l-5 m-5 s-5">Dish</td>
+                    <td class="col l-2 m-2 s-2">Price</td>
+                    <td class="col l-2 m-2 s-0">Quantity</td> <td class="col l-0 m-0 s-2">Qty</td>
+                    <td class="col l-2 m-2 s-2">Total</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr class="row">
+                    <td class="col l-o-9 l-3 m-o-8 m-4 s-o-6 s-6">Grand Total <span></span></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <form method="" action="" id="order-form">
+            <input name="order" type="hidden" value=""></input>
+            <input type="submit" id="submit" value="GO TO ORDER">
+        </form>
+    </div>
+</section>
+
+<!-- introstrative Images -->
+<div id="outro-image" class="row">
+    <div class="col l-2-4 m-2-4 s-6" style="background-image: url(images/menu/menu_gunkan-kani.jpg);"></div>
+    <div class="col l-2-4 m-2-4 s-6" style="background-image: url(images/menu/menu_sashimi-amaebi.jpg);"></div>
+    <div class="col l-2-4 m-2-4 s-6" style="background-image: url(images/menu/menu_makimono-karaisake.jpg);"></div>
+    <div class="col l-2-4 m-2-4 s-6" style="background-image: url(images/menu/menu_gunkan-tobikowasabi.jpg);"></div>
+    <div class="col l-2-4 m-2-4 s-6" style="background-image: url(images/menu/menu_nigiri-unagi.jpg);"></div>
+    <div class="col l-0 m-0 s-6" style="background-image: url(images/menu/menu_nigiri-amaebi.jpg);"></div>
+</div>
+
+<script src="/javascript/menu.js"></script>
