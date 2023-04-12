@@ -1,0 +1,70 @@
+
+.contact {
+    color: var(--main-color);
+}
+
+/* Wall */
+#wallpaper-image {
+    background-image: url("/images/general/wallpaper-1.jpg");
+    filter: brightness(0.3);
+}
+
+/* Contact Form */
+#contact-form form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2%;
+    background-color: #F9F9F9;
+}
+#contact-form input {
+    width: 49%;
+    outline: none;
+    border: lightgray solid 1px;
+    padding: 15px 20px;
+    margin: 1% 0;
+}
+#contact-form textarea {
+    width: 100%;
+    height: 150px;
+    resize: vertical;
+    outline: none;
+    border: lightgray solid 1px;
+    padding: 20px;
+    margin: 1% 0;
+}
+#contact-form input[type = "submit"] {
+    background-color: var(--main-color);
+    color: white;
+    margin: 1% auto;
+}
+
+/* Contact Info */
+#contact-info {
+    padding: 0 2%;
+}
+#contact-info h3 {
+    font-size: 25px;
+    color: var(--main-color);
+}
+#contact-info a {
+    display: block;
+    margin: 15px 0;
+}
+#contact-info a:hover {
+    animation: change_color 0.25s forwards;
+}
+
+/* Map */
+#map iframe {
+    width: 100%;
+}
+
+@media (max-width: 739px) {
+    #contact-form input {
+        width: 100%;
+    }
+    #contact-form textarea {
+        height: 120px;
+    }
+}

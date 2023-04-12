@@ -18,7 +18,7 @@ class siteController {
     }
 
     // About
-    about(req, res) {
+    async about(req, res) {
         res.render('about', {
             page: 'about'
         })
@@ -30,6 +30,13 @@ class siteController {
         res.render('menu', {
             page: 'menu',
             dish: mongooseUtil.getData(dish)
+        })
+    }
+
+    // Contact
+    async contact(req, res) {
+        res.render('contact', {
+            page: 'contact'
         })
     }
 }
