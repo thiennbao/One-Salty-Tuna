@@ -173,6 +173,7 @@
 /* Menu */
 #dishes > div > div {
     border: lightgray solid 1px;
+    border-radius: 10px;
 }
 #dishes img {
     width: 100%;
@@ -228,9 +229,13 @@
 /* News */
 #news-item {
     margin: 0px;
+    border-radius: 10px;
 }
 #news-item > div {
     padding: 10px;
+}
+#news-item > div > div {
+    border-radius: 10px;
 }
 #news-item img {
     width: 100%;

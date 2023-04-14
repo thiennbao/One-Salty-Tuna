@@ -4,16 +4,11 @@ const Dish = require('../../database/model/dish')
 
 class siteController {
     // Home
-    home(req, res) {
-        Dish.find({})
-        .then( dish => {
-            res.render('home', {
-                page: 'home',
-                dish: mongooseUtil.getData(dish)
-            })
-        })
-        .catch(err => {
-            console.log(err)
+    async home(req, res) {
+        const dish = await Dish.find({}).skip( Math.random() * (await Dish.count({}) - 8) ).limit(8)
+        res.render('home', {
+            page: 'home',
+            dish: mongooseUtil.getData(dish)
         })
     }
 
