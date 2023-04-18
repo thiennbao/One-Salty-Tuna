@@ -2,10 +2,10 @@
     <div id="login-form">
         <h3>Log in</h3>
         <form method="POST" action="login">
-            <input id="username" type="text" name="username" placeholder="User name" oninput="validate()">
-            <label for="username">User name is not found</label>
-            <input id="password" type="password" name="password" placeholder="Password" oninput="validate()">
-            <label for="password">Wrong password</label>
+            <input id="username" type="text" name="username" placeholder="User name" oninput="validate()" value="{{info.username}}">
+            <label for="username">{{label 'username' warning}}</label>
+            <input id="password" type="password" name="password" placeholder="Password" oninput="validate()" value="{{info.password}}">
+            <label for="password">{{label 'password' warning}}</label>
             <input id="submit" type="submit" value="LOG IN" disabled>
         </form>
         <p>New to One Salty Tuna? <a href="/auth/signup">Sign up</a></p>

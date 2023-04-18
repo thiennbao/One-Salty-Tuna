@@ -1,0 +1,32 @@
+<div id="signup">
+    <div id="signup-form">
+        <h3>Sign up</h3>
+        <form method="POST" action="signup?step={{step}}">
+            {{#if step 1}}
+                <input id="phone" type="text" name="phone" placeholder="Phone" onblur="phoneValidate()">
+                <label for="phone">{{#if warning 1}} This phone number is not available {{/if}}</label>
+                <input id="submit" type="submit" value="NEXT" >
+            {{/if}}
+            {{#if step 2}}
+                <input id="phone" type="hidden" name="phone" value="{{phone}}">
+                <input id="password" type="password" name="password" placeholder="Password" onblur="passValidate()">
+                <label for="password"></label>
+                <input id="submitpass" type="password" name="submitpass" placeholder="Submit Password" onblur="submitPassValidate()">
+                <label for="password"></label>
+                <input id="submit" type="submit" value="NEXT" >
+            {{/if}}
+            {{#if step 3}}
+                <input id="phone" type="hidden" name="phone" value="{{phone}}">
+                <input id="name" type="text" name="name" placeholder="Name" onblur="nameValidate()">
+                <label for="name"></label>
+                <input id="dob" type="text" name="dob" placeholder="Date of birth">
+                <label for="dob"></label>
+                <input id="email" type="text" name="email" placeholder="Email" onblur="emailValidate()">
+                <label for="email"></label>
+                <input id="submit" type="submit" value="SIGN UP" >
+            {{/if}}
+        </form>
+        <p>Already have an account? <a href="/auth/login">Log in</a></p>
+    </div>
+</div>
+<script src="/javascript/signup.js"></script>

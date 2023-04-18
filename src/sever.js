@@ -13,7 +13,8 @@ db.connect();
 app.use(express.static(path.join(__dirname, 'public')))
 
 // View engine
-app.engine('hbs', exphbs.engine({extname: 'hbs'}))
+const hbs = require('./handlebars/hbs')
+app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'resources', 'views'))
 

@@ -1,4 +1,4 @@
-const mongooseUtil = require('../../util/mongoose')
+const mongooseUtil = require('../../database/mongoose')
 
 const Dish = require('../../database/model/dish')
 
