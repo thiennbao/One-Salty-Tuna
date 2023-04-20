@@ -23,7 +23,7 @@
     color: var(--main-color);
     font-size: 30px;
 }
-#signup-form form > input {
+#signup-form form input {
     width: 100%;
     height: 40px;
     border: none;
@@ -32,6 +32,12 @@
     margin-top: 4%;
     padding: 10px;
     font-size: 16px;
+}
+#signup-form form input.valid {
+    border-bottom: lightgreen solid 1px;
+}
+#signup-form form input.invalid {
+    border-bottom: var(--main-color) solid 1px;
 }
 #signup-form #submit {
     position: absolute;
@@ -48,7 +54,7 @@
 #signup-form #submit:disabled {
     background-color: gray;
 }
-#signup-form label {
+#signup-form .form-msg {
     display: block;
     padding-top: 10px;
     height: 30px;

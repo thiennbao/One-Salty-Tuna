@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 
 const User = require('../../database/model/user')
 
-class authController {
+class AuthController {
     // Login
     login(req, res) {
         res.render('login', {
@@ -13,16 +13,15 @@ class authController {
     }
 
     async loginForm(req, res) {
-        const user = await User.findOne({username: req.body.username})
-        if (user) {
-            const match = await bcrypt.compare(req.body.password, user.password)
+        const user = await User.findOne({phone: req.body.phone})
+        if (user && user.pass) {
+            const match = await bcrypt.compare(req.body.pass, user.pass)
             if (match) {
                 const token = jwt.sign({
                     _id: user._id
                 }, process.env.JWTKEY, {
                     expiresIn: '6h'
                 })
-                res.cookie('user', user.username)
                 res.cookie('token', token, {
                     httpOnly: true,
                     sameSite: 'strict'
@@ -38,7 +37,7 @@ class authController {
         } else {
             res.render('login', {
                 page: 'login',
-                warning: 0, // Not exist
+                warning: 1, // Account does not exist
                 info: req.body
             })
         }
@@ -62,18 +61,20 @@ class authController {
                     res.render('signup', {
                         page: 'signup',
                         step: 1,
-                        warning: 1 // Not available
-                    })
+                        warning: 1, // Not available
+                        info: req.body
+                })
                 } else {
                     if (!user) {
                         User.create({
-                            phone: req.body.phone
+                            phone: req.body.phone,
+                            role: 'user'
                         })
                     }
                     res.render('signup', {
                         page: 'signup',
                         step: 2,
-                        phone: req.body.phone
+                        info: req.body
                     })
                 }
                 break
@@ -83,7 +84,7 @@ class authController {
                 if (user && user.pass && user.name) {
                     res.redirect('siginup')
                 } else {
-                    bcrypt.hash(req.body.password, 10, (err, hash) => {
+                    bcrypt.hash(req.body.pass, 10, (err, hash) => {
                         User.findOneAndUpdate({phone: req.body.phone}, {
                             pass: hash
                         })
@@ -91,7 +92,7 @@ class authController {
                             res.render('signup', {
                                 page: 'signup',
                                 step: 3,
-                                phone: req.body.phone
+                                info: req.body
                             })
                         })
                     })
@@ -101,7 +102,7 @@ class authController {
                 // Information
                 user = await User.findOne({phone: req.body.phone})
                 if (user && user.pass && user.name) {
-                    res.redirect('siginup')
+                    res.redirect('signup')
                 } else {
                     User.findOneAndUpdate({phone: req.body.phone}, {
                         name: req.body.name,
@@ -117,4 +118,4 @@ class authController {
     }
 }
 
-module.exports = new authController
+module.exports = new AuthController

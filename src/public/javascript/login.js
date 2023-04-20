@@ -1,20 +1,13 @@
-function validate() {
-    var user = $('#username').val()
-    var pass = $('#password').val()
 
-    $('label[for="username"]').text('')
+Validator({
+    formSelector: '#login-form',
+    msgSelector: '.form-msg',
+    rules: [
+        Validator.isRequired('#phone'),
+        Validator.isNumber('#phone'),
+        Validator.minLength('#phone', 7, 'Invalid phone number'),
+        Validator.maxLength('#phone', 12, 'Invalid phone number'),
 
-    // Submit button
-    if (user.length != 0 && pass.length != 0) {
-        document.getElementById('submit').removeAttribute("disabled")
-    } else {
-        document.getElementById('submit').setAttribute("disabled", "disabled")
-    }
-}
-
-function usernameValidate() {
-    var user = $('#username').val()
-    if (user) {
-        
-    }
-}
+        Validator.isRequired('#pass'),
+    ]
+})

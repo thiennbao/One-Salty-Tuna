@@ -2,13 +2,14 @@
     <div id="login-form">
         <h3>Log in</h3>
         <form method="POST" action="login">
-            <input id="username" type="text" name="username" placeholder="User name" oninput="validate()" value="{{info.username}}">
-            <label for="username">{{label 'username' warning}}</label>
-            <input id="password" type="password" name="password" placeholder="Password" oninput="validate()" value="{{info.password}}">
-            <label for="password">{{label 'password' warning}}</label>
-            <input id="submit" type="submit" value="LOG IN" disabled>
+            <input id="phone" type="text" name="phone" placeholder="Phone" value="{{info.phone}}" class="{{#if warning 1}}invalid{{/if}}">
+            <span class="form-msg">{{#if warning 1}}Account does not exist{{/if}}</span>
+            <input id="pass" type="password" name="pass" placeholder="Password" class="{{#if warning 2}}invalid{{/if}}">
+            <span class="form-msg">{{#if warning 2}}Wrong password{{/if}}</span>
+            <input id="submit" type="submit" value="LOG IN">
         </form>
         <p>New to One Salty Tuna? <a href="/auth/signup">Sign up</a></p>
     </div>
 </div>
+<script src="/javascript/validator.js"></script>
 <script src="/javascript/login.js"></script>

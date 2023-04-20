@@ -2,7 +2,7 @@ const mongooseUtil = require('../../database/mongoose')
 
 const Dish = require('../../database/model/dish')
 
-class siteController {
+class SiteController {
     // Home
     async home(req, res) {
         const dish = await Dish.find({}).skip( Math.random() * (await Dish.count({}) - 8) ).limit(8)
@@ -36,4 +36,4 @@ class siteController {
     }
 }
 
-module.exports = new siteController
+module.exports = new SiteController
