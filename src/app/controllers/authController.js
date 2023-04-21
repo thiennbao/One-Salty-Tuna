@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken')
 const User = require('../../database/model/user')
 
 class AuthController {
+    
     // Login
     login(req, res) {
         res.render('login', {
@@ -18,7 +19,7 @@ class AuthController {
             const match = await bcrypt.compare(req.body.pass, user.pass)
             if (match) {
                 const token = jwt.sign({
-                    _id: user._id
+                    phone: user.phone
                 }, process.env.JWTKEY, {
                     expiresIn: '6h'
                 })
@@ -115,6 +116,11 @@ class AuthController {
                 }
                 break
         }
+    }
+
+    logout(req, res) {
+        res.clearCookie('token')
+        res.redirect('/')
     }
 }
 

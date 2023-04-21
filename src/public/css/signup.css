@@ -41,18 +41,15 @@
 }
 #signup-form #submit {
     position: absolute;
-    left: 0;
+    left: 50%;
     bottom: 15%;
+    transform: translateX(-50%);
     width: 50%;
     background-color: var(--main-color);
     color: white;
     font-weight: bold;
-    margin: 10px 25%;
     border: none;
     border-radius: 10px;
-}
-#signup-form #submit:disabled {
-    background-color: gray;
 }
 #signup-form .form-msg {
     display: block;
@@ -63,6 +60,7 @@
 }
 #signup-form p {
     position: absolute;
+    width: 100%;
     left: 50%;
     bottom: 5%;
     transform: translateX(-50%);
@@ -102,9 +100,6 @@
 
 /* For Mobile */
 @media (max-width: 739px) {
-    #signup {
-        background: url('/images/general/wallpaper-2.jpg');
-    }
     #signup-form {
         margin-left: 50%;
         transform: translateX(-50%);

@@ -1,0 +1,54 @@
+<div id="user-setting">
+    <div id="container" class="row">
+        <div id="catalog" class="col l-4 m-4 s-0">
+            <div id="catalog-info" class="current">User information</div>
+            <div id="catalog-card">Card information</div>
+            <div id="catalog-pass">Change password</div>
+        </div>
+        <div id="form-container" class="col l-8 m-8 s-12">
+            <div id="info-container">
+                <h3>USER INFORMATION</h3>
+                <form method="POST" action="changeInfo" id="info-form">
+                    <input id="name" type="text" name="name" placeholder="Name">
+                    <span class="form-msg"></span>
+                    <input id="dob" type="text" onfocus="(this.type='date')" name="dob" placeholder="Date of birth">
+                    <span class="form-msg"></span>
+                    <input id="email" type="text" name="email" placeholder="Email">
+                    <span class="form-msg"></span>
+                    <input id="info-submit" type="submit" value="UPDATE">
+                </form>
+            </div>
+            <div id="card-container">
+                <h3>CARD INFORMATION</h3>
+                <form method="POST" action="changeCard" id="card-form">
+                    <input id="cardnumber" type="text" name="cardnumber" placeholder="Card Number">
+                    <span class="form-msg"></span>
+                    <input id="exp" type="text" onfocus="(this.type='month')" name="exp" placeholder="Exp Month">
+                    <span class="form-msg"></span>
+                    <input id="ccv" type="text" name="ccv" placeholder="CCV">
+                    <span class="form-msg"></span>
+                    <input id="cardname" type="text" name="cardname" placeholder="Name On Card">
+                    <span class="form-msg"></span>
+                    <input id="billingaddr" type="text" name="billingaddr" placeholder="Billing Address">
+                    <span class="form-msg"></span>
+                    <input id="postalcode" type="text" name="postalcode" placeholder="Postal Code">
+                    <span class="form-msg"></span>
+                    <input id="card-submit" type="submit" value="UPDATE">
+                </form>
+            </div>
+            <div id="pass-container">
+                <h3>CHANGE PASSWORD</h3>
+                <form method="POST" action="changePass" id="pass-form">
+                    <input id="pass" type="password" name="pass" placeholder="Old password">
+                    <span class="form-msg"></span>
+                    <input id="newpass" type="password" name="newpass" placeholder="New password">
+                    <span class="form-msg"></span>
+                    <input id="cfpass" type="password" name="cfpass" placeholder="Confirm new password">
+                    <span class="form-msg"></span>
+                    <input id="pass-submit" type="submit" value="UPDATE">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/javascript/user.js"></script>

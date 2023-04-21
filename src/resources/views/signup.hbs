@@ -2,20 +2,20 @@
     <div id="signup-form">
         <h3>Sign up</h3>
         <form method="POST" action="signup?step={{step}}">
-            {{#if step 1}}
-                <input id="phone" type="text" name="phone" placeholder="Phone" value="{{info.phone}}" class="{{#if warning 1}}invalid{{/if}}">
-                <span class="form-msg">{{#if warning 1}}This phone number is not available{{/if}}</span>
+            {{#match step 1}}
+                <input id="phone" type="text" name="phone" placeholder="Phone" value="{{info.phone}}" class="{{#match warning 1}}invalid{{/match}}">
+                <span class="form-msg">{{#match warning 1}}This phone number is not available{{/match}}</span>
                 <input id="submit" type="submit" value="NEXT">
-            {{/if}}
-            {{#if step 2}}
+            {{/match}}
+            {{#match step 2}}
                 <input id="phone" type="hidden" name="phone" value="{{info.phone}}">
                 <input id="pass" type="password" name="pass" placeholder="Password">
                 <span class="form-msg"></span>
                 <input id="cfpass" type="password" name="cfpass" placeholder="Confirm Password">
                 <span class="form-msg"></span>
                 <input id="submit" type="submit" value="NEXT">
-            {{/if}}
-            {{#if step 3}}
+            {{/match}}
+            {{#match step 3}}
                 <input id="phone" type="hidden" name="phone" value="{{info.phone}}">
                 <input id="name" type="text" name="name" placeholder="Name">
                 <span class="form-msg"></span>
@@ -24,7 +24,7 @@
                 <input id="email" type="text" name="email" placeholder="Email">
                 <span class="form-msg"></span>
                 <input id="submit" type="submit" value="SIGN UP">
-            {{/if}}
+            {{/match}}
         </form>
         <p>Already have an account? <a href="/auth/login">Log in</a></p>
     </div>

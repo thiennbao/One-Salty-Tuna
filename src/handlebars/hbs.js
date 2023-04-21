@@ -7,7 +7,7 @@ const hbs = exphbs.create({
     partialsDir: path.join(__dirname, '../resources/views/partials'),
 
     helpers: {
-        if: function(variable, value, option) {
+        match: function(variable, value, option) {
             if (variable == value) {
                 return option.fn(this)
             }
