@@ -9,7 +9,8 @@ class SiteController {
     // Home
     async home(req, res) {
 
-        const dish = await Dish.find({}).skip( Math.random() * (await Dish.count({}) - 8) ).limit(8)
+        // const dish = await Dish.find({}).skip( Math.random() * (await Dish.count({}) - 8) ).limit(8)
+        const dish  = await Dish.find({})
         res.render('home', {
             page: 'home',
             dish: mongooseUtil.getData(dish),

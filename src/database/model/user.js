@@ -9,7 +9,7 @@ const User = Schema({
     name: {type: String},
     dob: {type: String},
     email: {type: String},
-    card: {type: String},
+    card: {type: Object},
 
     role: {type: String}
 })

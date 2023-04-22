@@ -23,6 +23,22 @@ class AuthMiddleware {
             next()
         }
     }
+
+    async checkUser(req, res, next) {
+        try {
+            const user = req.params.user
+            const cookies = cookie.parse(req.headers.cookie || '')
+            const token = cookies.token
+            const data = jwt.verify(token, process.env.JWTKEY)
+            if (data.phone == user) {
+                next()
+            } else {
+                res.send('403')
+            }
+        } catch (err) {
+            res.redirect('/auth/login')
+        }
+    }
 }
 
 module.exports = new AuthMiddleware

@@ -4,7 +4,7 @@
 }
 
 #user-setting {
-    height: 85vh;
+    height: 90vh;
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/images/general/wallpaper-2.jpg');
     display: flex;
     align-items: center;
@@ -41,6 +41,7 @@
 }
 #form-container h3 {
     font-size: 25px;
+    margin: 30px 10px;
     color: var(--main-color);
 }
 #form-container input {
@@ -84,8 +85,8 @@
     #container {
         margin-left: 100%;
         transform: translateX(-120%);
-        width: 40%;
-        min-width: 650px;
+        width: 45%;
+        min-width: 700px;
     }
 }
 
@@ -94,8 +95,7 @@
     #container {
         margin-left: 100%;
         transform: translateX(-110%);
-        width: 55%;
-        min-width: 550px;
+        width: 60%;
     }
 }
 
@@ -114,5 +114,16 @@
         margin-left: 50%;
         transform: translateX(-50%);
         width: 80%;
+    }
+    #form-container {
+        height: 100%;
+    }
+    #form-container h3 {
+        margin: 30px;
+        text-align: center;
+    }
+    #form-container svg {
+        transform: scale(1.5);
+        cursor: pointer;
     }
 }

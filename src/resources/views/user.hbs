@@ -7,40 +7,76 @@
         </div>
         <div id="form-container" class="col l-8 m-8 s-12">
             <div id="info-container">
-                <h3>USER INFORMATION</h3>
+                <h3 class="row">
+                    <span class="glyphicon glyphicon-chevron-left col l-0 m-0 s-1 prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                            <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                        </svg>
+                    </span>
+                    <span class="col l-12 m-12 s-10">USER INFORMATION</span>
+                    <span class="glyphicon glyphicon-chevron-right col l-0 m-0 s-1 next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg>
+                    </span>
+                </h3>
                 <form method="POST" action="changeInfo" id="info-form">
-                    <input id="name" type="text" name="name" placeholder="Name">
+                    <input id="name" type="text" name="name" placeholder="Name" value="{{info.name}}">
                     <span class="form-msg"></span>
-                    <input id="dob" type="text" onfocus="(this.type='date')" name="dob" placeholder="Date of birth">
+                    <input id="dob" type="text" onfocus="(this.type='date')" name="dob" placeholder="Date of birth" value="{{info.dob}}">
                     <span class="form-msg"></span>
-                    <input id="email" type="text" name="email" placeholder="Email">
+                    <input id="email" type="text" name="email" placeholder="Email" value="{{info.email}}">
                     <span class="form-msg"></span>
                     <input id="info-submit" type="submit" value="UPDATE">
                 </form>
             </div>
             <div id="card-container">
-                <h3>CARD INFORMATION</h3>
+                <h3 class="row">
+                    <span class="glyphicon glyphicon-chevron-left col l-0 m-0 s-1 prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox=" 0 0 16 16">
+                            <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                        </svg>
+                    </span>
+                    <span class="col l-12 m-12 s-10">CARD INFORMATION</span>
+                    <span class="glyphicon glyphicon-chevron-right col l-0 m-0 s-1 next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg>
+                    </span>
+                </h3>
                 <form method="POST" action="changeCard" id="card-form">
-                    <input id="cardnumber" type="text" name="cardnumber" placeholder="Card Number">
+                    <input id="cardnumber" type="text" name="cardnumber" placeholder="Card Number" value="{{info.card.cardnumber}}">
                     <span class="form-msg"></span>
-                    <input id="exp" type="text" onfocus="(this.type='month')" name="exp" placeholder="Exp Month">
+                    <input id="exp" type="text" onfocus="(this.type='month')" name="exp" placeholder="Exp Month" value="{{info.card.exp}}">
                     <span class="form-msg"></span>
-                    <input id="ccv" type="text" name="ccv" placeholder="CCV">
+                    <input id="ccv" type="text" name="ccv" placeholder="CCV" value="{{info.card.ccv}}">
                     <span class="form-msg"></span>
-                    <input id="cardname" type="text" name="cardname" placeholder="Name On Card">
+                    <input id="cardname" type="text" name="cardname" placeholder="Name On Card" value="{{info.card.cardname}}">
                     <span class="form-msg"></span>
-                    <input id="billingaddr" type="text" name="billingaddr" placeholder="Billing Address">
+                    <input id="billingaddr" type="text" name="billingaddr" placeholder="Billing Address" value="{{info.card.billingaddr}}">
                     <span class="form-msg"></span>
-                    <input id="postalcode" type="text" name="postalcode" placeholder="Postal Code">
+                    <input id="postalcode" type="text" name="postalcode" placeholder="Postal Code" value="{{info.card.postalcode}}">
                     <span class="form-msg"></span>
                     <input id="card-submit" type="submit" value="UPDATE">
                 </form>
             </div>
             <div id="pass-container">
-                <h3>CHANGE PASSWORD</h3>
+                <h3 class="row">
+                    <span class="glyphicon glyphicon-chevron-left col l-0 m-0 s-1 prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                            <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                        </svg>
+                    </span>
+                    <span class="col l-12 m-12 s-10">CHANGE PASSWORD</span>
+                    <span class="glyphicon glyphicon-chevron-right col l-0 m-0 s-1 next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg>
+                    </span>
+                </h3>
                 <form method="POST" action="changePass" id="pass-form">
                     <input id="pass" type="password" name="pass" placeholder="Old password">
-                    <span class="form-msg"></span>
+                    <span class="form-msg">{{#match warning 1}}Wrong password{{/match}}</span>
                     <input id="newpass" type="password" name="newpass" placeholder="New password">
                     <span class="form-msg"></span>
                     <input id="cfpass" type="password" name="cfpass" placeholder="Confirm new password">
@@ -51,4 +87,5 @@
         </div>
     </div>
 </div>
+<script src="/javascript/validator.js"></script>
 <script src="/javascript/user.js"></script>

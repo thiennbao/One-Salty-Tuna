@@ -32,14 +32,14 @@ class AuthController {
                 res.render('login', {
                     page: 'login',
                     warning: 2, // Wrong password
-                    info: req.body
+                    phone: req.body.phone
                 })
             }
         } else {
             res.render('login', {
                 page: 'login',
                 warning: 1, // Account does not exist
-                info: req.body
+                phone: req.body.phone
             })
         }
     }
@@ -63,7 +63,7 @@ class AuthController {
                         page: 'signup',
                         step: 1,
                         warning: 1, // Not available
-                        info: req.body
+                        phone: req.body.phone
                 })
                 } else {
                     if (!user) {
@@ -75,7 +75,7 @@ class AuthController {
                     res.render('signup', {
                         page: 'signup',
                         step: 2,
-                        info: req.body
+                        phone: req.body.phone
                     })
                 }
                 break
@@ -93,7 +93,7 @@ class AuthController {
                             res.render('signup', {
                                 page: 'signup',
                                 step: 3,
-                                info: req.body
+                                phone: req.body.phone
                             })
                         })
                     })

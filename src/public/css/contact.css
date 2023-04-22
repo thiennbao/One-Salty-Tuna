@@ -16,6 +16,7 @@
     justify-content: space-between;
     padding: 2%;
     background-color: #F9F9F9;
+    border-radius: 10px;
 }
 #contact-form input {
     width: 49%;
@@ -23,6 +24,7 @@
     border: lightgray solid 1px;
     padding: 15px 20px;
     margin: 1% 0;
+    border-radius: 10px;
 }
 #contact-form textarea {
     width: 100%;
@@ -32,6 +34,7 @@
     border: lightgray solid 1px;
     padding: 20px;
     margin: 1% 0;
+    border-radius: 10px;
 }
 #contact-form input[type = "submit"] {
     background-color: var(--main-color);

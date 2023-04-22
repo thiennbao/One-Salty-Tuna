@@ -2,7 +2,7 @@
     <div id="login-form">
         <h3>Log in</h3>
         <form method="POST" action="login">
-            <input id="phone" type="text" name="phone" placeholder="Phone" value="{{info.phone}}" class="{{#match warning 1}}invalid{{/match}}">
+            <input id="phone" type="text" name="phone" placeholder="Phone" value="{{phone}}" class="{{#match warning 1}}invalid{{/match}}">
             <span class="form-msg">{{#match warning 1}}Account does not exist{{/match}}</span>
             <input id="pass" type="password" name="pass" placeholder="Password" class="{{#match warning 2}}invalid{{/match}}">
             <span class="form-msg">{{#match warning 2}}Wrong password{{/match}}</span>
