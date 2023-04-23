@@ -1,4 +1,4 @@
-// Image
+// Outro Image
 var outroImages = $('#outro-image div');
 for (let i = 0; i < outroImages.length; i++) {
     outroImages[i].onmouseover = function() {

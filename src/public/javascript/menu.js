@@ -1,4 +1,38 @@
 
+function renderData(data) {
+    $('#dishes').html('')
+    data.forEach(dish => {
+    $('#dishes').append(`
+        <div class="${dish.type} col l-3 m-4 s-6">
+            <div>
+                <img src="${dish.image}" alt="${dish.name}">
+                <p class="dish-name">${dish.name}</p>
+                <p class="describe">${dish.description}</p>
+                <p class="price">${dish.cost} $</p>
+                <div class="pick"><p>-</p><p>0</p><p>+</p></div>
+            </div>
+        </div>`)
+    })
+}
+$('#searchBtn').click(() => {
+    $.ajax({
+        url:`menu?key=${$('#key').val()}&cost=${$('#cost').val()}`,
+        type: 'GET'
+    })
+    .then(data => {
+        renderData(data)
+    })
+})
+$('#clearBtn').click(() => {
+    $.ajax({
+        url:`menu?key=&cost=`,
+        type: 'GET'
+    })
+    .then(data => {
+        renderData(data)
+    })
+})
+
 class Dish {
     constructor (name, price, quantity) {
         this.name = name,

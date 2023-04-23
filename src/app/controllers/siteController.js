@@ -8,16 +8,14 @@ class SiteController {
 
     // Home
     async home(req, res) {
-
-        // const dish = await Dish.find({}).skip( Math.random() * (await Dish.count({}) - 8) ).limit(8)
-        const dish  = await Dish.find({})
+        const dishes  = await Dish.find()
         res.render('home', {
             page: 'home',
-            dish: mongooseUtil.getData(dish),
+            dishes: mongooseUtil.getRandom(dishes, 8),
             phone: handlebarsUtil.getPhone(req)
         })
     }
-
+    
     // About
     about(req, res) {
         res.render('about', {
@@ -28,12 +26,24 @@ class SiteController {
 
     // Menu
     async menu(req, res) {
-        const dish = await Dish.find({})
-        res.render('menu', {
-            page: 'menu',
-            dish: mongooseUtil.getData(dish),
-            phone: handlebarsUtil.getPhone(req)
-        })
+        if (!Object.keys(req.query).length) {
+            // Menu page
+            const dishes = await Dish.find()
+            res.render('menu', {
+                page: 'menu',
+                dishes: mongooseUtil.getData(dishes),
+                phone: handlebarsUtil.getPhone(req)
+            })
+        } else {
+            // Menu searching
+            var dishes
+            if (req.query.cost) {
+                dishes = await Dish.find().or([{name: RegExp(req.query.key, 'i')}, {description: RegExp(req.query.key, 'i')}, ]).where('cost').lte(req.query.cost)
+            } else {
+                dishes = await Dish.find().or([{name: RegExp(req.query.key, 'i')}, {description: RegExp(req.query.key, 'i')}, ])
+            }
+            res.send(dishes)
+        }
     }
 
     // Contact

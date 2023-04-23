@@ -12,8 +12,8 @@ class UserController {
         const user = await User.findOne({phone: handlebarsUtil.getPhone(req)})
         res.render('user', {
             page: 'user',
+            phone: user.phone,
             info: {
-                phone: user.phone,
                 name: user.name,
                 dob: user.dob,
                 email: user.email,
@@ -67,8 +67,8 @@ class UserController {
         } else {
             res.render('user', {
                 page: 'user',
+                phone: user.phone,
                 info: {
-                    phone: user.phone,
                     name: user.name,
                     dob: user.dob,
                     email: user.email,

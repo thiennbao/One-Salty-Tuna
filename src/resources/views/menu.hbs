@@ -7,9 +7,16 @@
 <!-- Menu -->
 <section id="menu-menu" class="grid wide">
     <h2 class="heading">MENU</h2>
+
+    <div id="search-box">
+        <input id="key" type="text" placeholder="Search">
+        <input id="cost" type="number" name="cost" placeholder="Cost">
+        <input id="searchBtn" type="submit" value="SEARCH">
+        <input id="clearBtn" type="submit" value="CLEAR">
+    </div>
     
     <div id="dishes" class="row vertical-gutters">
-        {{#each dish}}
+        {{#each dishes}}
             <div class="{{this.type}} col l-3 m-4 s-6">
                 <div>
                     <img src="{{this.image}}" alt="{{this.name}}">

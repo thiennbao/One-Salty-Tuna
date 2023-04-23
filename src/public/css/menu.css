@@ -10,6 +10,24 @@
 }
 
 /* Menu */
+#search-box {
+    width: 50%;
+    margin-bottom: 50px;
+}
+#search-box input {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: gray solid 1px;
+}
+#search-box input[type="submit"] {
+    margin-right: 20px;
+    width: 20%;
+    cursor: pointer;
+}
 #dishes > div > div {
     border: lightgray solid 1px;
     border-radius: 10px;
@@ -129,6 +147,9 @@
 
 /* For Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
+    #search-box {
+        width: 75%;
+    }
     #dishes .pick p {
         width: 30px;
         line-height: 26px;
@@ -141,6 +162,15 @@
 
 /* For Mobile */
 @media (max-width: 739px) {
+    #search-box {
+        width: 100%;
+    }
+    #search-box input {
+        margin: 5px 0;
+    }
+    #search-box input[type="submit"] {
+        width: 100%;
+    }
     #dishes .price {
         width: 90%;
         margin: 5%;
