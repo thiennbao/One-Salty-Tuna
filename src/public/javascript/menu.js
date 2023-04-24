@@ -9,7 +9,7 @@ function renderData(data) {
                 <img src="${dish.image}" alt="${dish.name}">
                 <p class="dish-name">${dish.name}</p>
                 <p class="describe">${dish.description}</p>
-                <p class="price">${dish.cost} $</p>
+                <p class="price">${dish.price} $</p>
                 <div class="pick"><p>-</p><p>0</p><p>+</p></div>
             </div>
         </div>`)
@@ -17,7 +17,7 @@ function renderData(data) {
 }
 $('#searchBtn').click(() => {
     $.ajax({
-        url:`menu?key=${$('#key').val()}&cost=${$('#cost').val()}`,
+        url:`menu?key=${$('#key').val()}&price=${$('#price').val()}`,
         type: 'GET'
     })
     .then(data => {
@@ -26,7 +26,7 @@ $('#searchBtn').click(() => {
 })
 $('#clearBtn').click(() => {
     $.ajax({
-        url:`menu?key=&cost=`,
+        url:`menu?key=&price=`,
         type: 'GET'
     })
     .then(data => {

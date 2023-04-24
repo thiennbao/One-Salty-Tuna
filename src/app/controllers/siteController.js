@@ -10,10 +10,9 @@ class SiteController {
 
     // Home
     async home(req, res) {
-        const dishes  = await Dish.find()
         res.render('home', {
             page: 'home',
-            dishes: mongooseUtil.getRandom(dishes, 8),
+            dishes: await mongooseUtil.getRandom(Dish, 8),
             phone: handlebarsUtil.getPhone(req)
         })
     }
@@ -30,17 +29,16 @@ class SiteController {
     async menu(req, res) {
         if (!Object.keys(req.query).length) {
             // Menu page
-            const dishes = await Dish.find()
             res.render('menu', {
                 page: 'menu',
-                dishes: mongooseUtil.getData(dishes),
+                dishes: await mongooseUtil.getData(Dish),
                 phone: handlebarsUtil.getPhone(req)
             })
         } else {
             // Menu searching
             var dishes
-            if (req.query.cost) {
-                dishes = await Dish.find().or([{name: RegExp(req.query.key, 'i')}, {description: RegExp(req.query.key, 'i')}]).where('cost').lte(req.query.cost)
+            if (req.query.price) {
+                dishes = await Dish.find().or([{name: RegExp(req.query.key, 'i')}, {description: RegExp(req.query.key, 'i')}]).where('price').lte(req.query.price)
             } else {
                 dishes = await Dish.find().or([{name: RegExp(req.query.key, 'i')}, {description: RegExp(req.query.key, 'i')}])
             }
@@ -59,9 +57,6 @@ class SiteController {
     // Cart
     async cart(req, res) {
         const user = await User.findOne({phone: handlebarsUtil.getPhone(req)})
-        await User.findOneAndUpdate({phone: handlebarsUtil.getPhone(req)}, {
-            cart: req.body.cart
-        })
         res.render('cart', {
             page: 'cart',
             phone: user.phone,
@@ -71,8 +66,34 @@ class SiteController {
                 card: user.card
             },
 
-            cart: req.body.cart
+            cart: await mongooseUtil.getOrderContent(Dish, req.body.cart)
         })
+    }
+
+    // Order
+    async order(req, res) {
+        await Order.create({
+            phone: handlebarsUtil.getPhone(req),
+
+            contact: req.body.contact,
+            name: req.body.name,
+            address: req.body.address,
+            message: req.body.message,
+        
+            payment: req.body.payment,
+            card: req.body.payment == 'card' ? {
+                cardnumber: req.body.cardnumber,
+                exp: req.body.exp,
+                ccv: req.body.ccv,
+                cardname: req.body.cardname,
+                billingaddr: req.body.billingaddr,
+                postalcode: req.body.postalcode
+            } : undefined,
+        
+            content: await mongooseUtil.getOrderContent(Dish, req.body.content)
+        })
+
+        res.redirect('menu')
     }
 
 }

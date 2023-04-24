@@ -32,15 +32,9 @@ class UserController {
 
     async changeCard(req, res) {
         const phone = handlebarsUtil.getPhone(req)
+        console.log(req.body)
         await User.findOneAndUpdate({phone: phone}, {
-            card: {
-                cardnumber: req.body.cardnumber,
-                exp: req.body.exp,
-                ccv: req.body.ccv,
-                cardname: req.body.cardname,
-                billingaddr: req.body.billingaddr,
-                postalcode: req.body.postalcode
-            }
+            card: req.body
         })
         res.redirect(phone)
     }

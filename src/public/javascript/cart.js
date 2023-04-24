@@ -5,10 +5,10 @@ Validator({
     rules: [
         Validator.isRequired('#name'),
         Validator.isText('#name'),
-        Validator.isRequired('#phone'),
-        Validator.isNumber('#phone'),
-        Validator.minLength('#phone', 7, 'Invalid phone number'),
-        Validator.maxLength('#phone', 12, 'Invalid phone number'),
+        Validator.isRequired('#contact'),
+        Validator.isNumber('#contact'),
+        Validator.minLength('#contact', 7, 'Invalid phone number'),
+        Validator.maxLength('#contact', 12, 'Invalid phone number'),
         Validator.isRequired('#address'),
 
         Validator.isRequired('#cardnumber'),

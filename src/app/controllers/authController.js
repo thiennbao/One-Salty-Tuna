@@ -108,7 +108,6 @@ class AuthController {
                     User.findOneAndUpdate({phone: req.body.phone}, {
                         name: req.body.name,
                         dob: req.body.dob,
-                        email: req.body.email
                     })
                     .then( () => {
                         res.redirect('login')
