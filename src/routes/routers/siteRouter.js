@@ -10,4 +10,7 @@ router.get('/about', SiteController.about)
 router.get('/menu', SiteController.menu)
 router.get('/contact', SiteController.contact)
 
+// Order
+router.post('/cart', SiteController.cart)
+
 module.exports = router

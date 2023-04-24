@@ -1,4 +1,5 @@
 
+// Menu searching
 function renderData(data) {
     $('#dishes').html('')
     data.forEach(dish => {
@@ -33,6 +34,7 @@ $('#clearBtn').click(() => {
     })
 })
 
+// Cart table
 class Dish {
     constructor (name, price, quantity) {
         this.name = name,
@@ -85,3 +87,21 @@ function printTable() {
     })
     $('#cart-table tfoot tr td span').text(`${total.toFixed(1)} $`)
 }
+
+// Order submit
+$('#order-form').submit((event) => {
+    const cart = []
+    var cartItem = $('#cart-table tbody tr')
+    cartItem.each((index, item) => {
+        cart.push({
+            name: $(item.children[1]).text(),
+            quantity: Number($(item.children[3]).text())
+        })
+    })
+    const cartJSON = JSON.stringify(cart)
+    $('#cart-content').val(cartJSON)
+
+    if (cart.length == 0) {
+        event.preventDefault()
+    }
+})

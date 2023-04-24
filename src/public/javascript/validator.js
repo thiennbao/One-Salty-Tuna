@@ -76,7 +76,7 @@ function Validator(option) {
 
                     // Display message if invalid
                     var msgElm = $(selector + '+' + option.msgSelector)
-                    if (errMsg) {
+                    if (errMsg && !$(selector).attr("disabled")) {
                         isAllValid = false
                         msgElm.text(errMsg)
                         inputElm.addClass('invalid')

@@ -1,0 +1,73 @@
+
+<!-- Wall -->
+<div id="cart-wallpaper">
+    <div id="wallpaper-image"></div>
+    <h1>CHECKOUT</h1>
+</div>
+
+<!-- Cart -->
+<section id="order" class="grid wide">
+    <h2 class="heading">CHECKOUT</h2>
+    <div>
+        <h3>USER INFOMATION</h3>
+        <div id="order-form">
+            <form method="POST" action="/order" class="row">
+                <fieldset id="info-form" class="col l-6">
+                    <input id="name" type="text" name="name" placeholder="Name" value="{{info.name}}"></input>
+                    <span class="form-msg"></span>
+                    <input id="phone" type="text" name="phone" placeholder="Phone" value="{{phone}}"></input>
+                    <span class="form-msg"></span>
+                    <input id="address" type="text" name="address" placeholder="Address" value="{{info.address}}"></input>
+                    <span class="form-msg"></span>
+                    <input id="message" type="text" name="message" placeholder="Message"></input>
+                    <span class="form-msg"></span>
+                    <div id="pay-method">
+                        <span>Payment Methods</span>
+                        <input type="radio" name="payment" value="cash" checked="checked">
+                        <label for="payment">Cash</label>
+                        <input type="radio" name="payment" value="card">
+                        <label for="payment">Card</label>
+                    </div>
+                    <span class="form-msg"></span>
+                    <input id="content" type="hidden" name="content" value="{{cart}}"></input>
+                </fieldset>
+                <fieldset id="card-form" class="col l-6">
+                    <input id="cardnumber" type="text" name="cardnumber" placeholder="Card Number" value="{{info.card.cardnumber}}">
+                    <span class="form-msg"></span>
+                    <input id="exp" type="text" onfocus="(this.type='month')" name="exp" placeholder="Exp Month" value="{{info.card.exp}}">
+                    <span class="form-msg"></span>
+                    <input id="ccv" type="text" name="ccv" placeholder="CCV" value="{{info.card.ccv}}">
+                    <span class="form-msg"></span>
+                    <input id="cardname" type="text" name="cardname" placeholder="Name On Card" value="{{info.card.cardname}}">
+                    <span class="form-msg"></span>
+                    <input id="billingaddr" type="text" name="billingaddr" placeholder="Billing Address" value="{{info.card.billingaddr}}">
+                    <span class="form-msg"></span>
+                    <input id="postalcode" type="text" name="postalcode" placeholder="Postal Code" value="{{info.card.postalcode}}">
+                    <span class="form-msg"></span>
+                </fieldset>
+                <input type="submit" id="submit" value="ORDER">
+            </form>
+        </div>
+
+        <h3>CART CONTENT</h3>
+        <table id="cart-table" class="grid">
+            <thead>
+                <tr class="row">
+                    <td class="col l-1 m-1 s-1">No</td>
+                    <td class="col l-5 m-5 s-5">Dish</td>
+                    <td class="col l-2 m-2 s-2">Price</td>
+                    <td class="col l-2 m-2 s-0">Quantity</td> <td class="col l-0 m-0 s-2">Qty</td>
+                    <td class="col l-2 m-2 s-2">Total</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr class="row">
+                    <td class="col l-o-9 l-3 m-o-8 m-4 s-o-6 s-6">Grand Total <span></span></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</section>
+<script src="/javascript/validator.js"></script>
+<script src="/javascript/cart.js"></script>

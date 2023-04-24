@@ -16,6 +16,7 @@ class UserController {
             info: {
                 name: user.name,
                 dob: user.dob,
+                address: user.address,
                 email: user.email,
                 card: user.card
             }
@@ -23,17 +24,15 @@ class UserController {
     }
 
     // Change infomation
-    changeInfo(req, res) {
+    async changeInfo(req, res) {
         const phone = handlebarsUtil.getPhone(req)
-        User.findOneAndUpdate({phone: phone}, req.body)
-        .then( () => {
-            res.redirect(phone)
-        })
+        await User.findOneAndUpdate({phone: phone}, req.body)
+        res.redirect(phone)
     }
 
-    changeCard(req, res) {
+    async changeCard(req, res) {
         const phone = handlebarsUtil.getPhone(req)
-        User.findOneAndUpdate({phone: phone}, {
+        await User.findOneAndUpdate({phone: phone}, {
             card: {
                 cardnumber: req.body.cardnumber,
                 exp: req.body.exp,
@@ -43,14 +42,12 @@ class UserController {
                 postalcode: req.body.postalcode
             }
         })
-        .then( () => {
-            res.redirect(phone)
-        })
+        res.redirect(phone)
     }
 
     async changePass(req, res) {
         const phone = handlebarsUtil.getPhone(req)
-
+        
         // Check password
         const user = await User.findOne({phone: phone})
         const match = await bcrypt.compare(req.body.pass, user.pass)

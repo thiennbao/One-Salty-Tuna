@@ -8,8 +8,11 @@ const User = Schema({
 
     name: {type: String},
     dob: {type: String},
+    address: {type: String},
     email: {type: String},
     card: {type: Object},
+
+    cart: {type: String},
 
     role: {type: String}
 })

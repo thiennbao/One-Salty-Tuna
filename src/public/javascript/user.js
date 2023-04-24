@@ -45,6 +45,7 @@ Validator({
         Validator.isRequired('#name'),
         Validator.isText('#name'),
         Validator.isRequired('#dob'),
+        Validator.isRequired('#address'),
         Validator.isRequired('#email'),
         Validator.isEmail('#email'),
     ]

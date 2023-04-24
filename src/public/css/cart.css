@@ -1,0 +1,108 @@
+
+/* Wall */
+#wallpaper-image {
+    background-image: url("/images/general/wallpaper-0.jpg");
+    filter: brightness(0.25);
+}
+
+#order > div {
+    position: relative;
+    padding-bottom: 80px;
+}
+#order h3 {
+    color: var(--main-color);
+    font-size: 25px;
+}
+
+/* Form */
+#order-form form fieldset {
+    border: none;
+    margin: 0;
+}
+#order-form form input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-bottom: gray solid 1px;
+    outline: none;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+#order-form form input.valid {
+    border-bottom: lightgreen solid 1px;
+}
+#order-form form input.invalid {
+    border-bottom: var(--main-color) solid 1px;
+}
+#pay-method {
+    margin-top: 10px;
+    padding: 0 10px;
+    font-size: 16px;
+}
+#order-form input[type="radio"] {
+    width: 10%;
+    height: 20px;
+}
+#order-form #submit {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 50%;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+}
+#order-form .form-msg {
+    display: block;
+    padding-top: 10px;
+    height: 30px;
+    font-size: 15px;
+    color: var(--main-color);
+}
+
+/* Cart */
+#cart {
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('/images/general/wallpaper-2.jpg');
+    background-position: center;
+    margin: 100px 0;
+}
+#cart h3 {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+}
+#cart svg {
+    transform: scale(3) translateY(-4px);
+    margin-left: 30px;
+}
+#cart-container {
+    position: relative;
+    width: 60%;
+    margin: auto;
+    padding: 3% 5% 10%;
+    border: var(--main-color) solid 3px;
+}
+#cart-table thead, tfoot {
+    background-color: var(--main-color);
+    width: 100%;
+    display: inline-block;
+    padding: 0 10px;
+}
+#cart-table tbody {
+    width: 100%;
+    display: inline-block;
+}
+#cart-table tr {
+    line-height: 40px;
+    padding: 0 10px;
+}
+#cart-table tbody tr {
+    background-color: white;
+}
+#cart-table tbody tr:nth-child(even) {
+    background-color: #F2F2F2;
+}

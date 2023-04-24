@@ -2,7 +2,9 @@
 const mongooseUtil = require('../../util/mongooseUtil')
 const handlebarsUtil = require('../../util/handlebarsUtil')
 
+const User = require('../../database/model/user')
 const Dish = require('../../database/model/dish')
+const Order = require('../../database/model/order')
 
 class SiteController {
 
@@ -38,9 +40,9 @@ class SiteController {
             // Menu searching
             var dishes
             if (req.query.cost) {
-                dishes = await Dish.find().or([{name: RegExp(req.query.key, 'i')}, {description: RegExp(req.query.key, 'i')}, ]).where('cost').lte(req.query.cost)
+                dishes = await Dish.find().or([{name: RegExp(req.query.key, 'i')}, {description: RegExp(req.query.key, 'i')}]).where('cost').lte(req.query.cost)
             } else {
-                dishes = await Dish.find().or([{name: RegExp(req.query.key, 'i')}, {description: RegExp(req.query.key, 'i')}, ])
+                dishes = await Dish.find().or([{name: RegExp(req.query.key, 'i')}, {description: RegExp(req.query.key, 'i')}])
             }
             res.send(dishes)
         }
@@ -53,6 +55,26 @@ class SiteController {
             phone: handlebarsUtil.getPhone(req)
         })
     }
+
+    // Cart
+    async cart(req, res) {
+        const user = await User.findOne({phone: handlebarsUtil.getPhone(req)})
+        await User.findOneAndUpdate({phone: handlebarsUtil.getPhone(req)}, {
+            cart: req.body.cart
+        })
+        res.render('cart', {
+            page: 'cart',
+            phone: user.phone,
+            info: {
+                name: user.name,
+                address: user.address,
+                card: user.card
+            },
+
+            cart: req.body.cart
+        })
+    }
+
 }
 
 module.exports = new SiteController
