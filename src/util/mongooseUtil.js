@@ -6,6 +6,11 @@ var mongooseUtil = {
         return data.map(data => data.toObject())
     },
 
+    async getLatest(Model, size) {
+        var data = await Model.find().sort({_id: 'asc'}).limit(size)
+        return data.map(data => data.toObject())
+    },
+
     async getRandom(Model, size) {
         var data = await Model.find()
         data = data.map(data => data.toObject())

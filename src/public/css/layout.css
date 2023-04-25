@@ -64,8 +64,8 @@ section {
 @keyframes button-bgcolor {
     to {background-color: var(--main-color); color: white;}
 }
-@keyframes dish-hover {
-    to {filter: brightness(0.6);}
+@keyframes shadow {
+    to {box-shadow: 0 2px 10px gray;}
 }
 @keyframes img-in {
     from {background-size: 160%;}

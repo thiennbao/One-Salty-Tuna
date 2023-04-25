@@ -13,7 +13,8 @@ const Order = Schema({
     payment: {type: String},
     card: {type: Object},
 
-    content: {type: String}
+    content: {type: String},
+    date: {type: Date, default: new Date()}
 })
 
 module.exports = mongoose.model('Order', Order)

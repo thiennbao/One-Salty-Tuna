@@ -60,6 +60,7 @@
 }
 #login-form p {
     position: absolute;
+    width: 100%;
     left: 50%;
     bottom: 5%;
     transform: translateX(-50%);

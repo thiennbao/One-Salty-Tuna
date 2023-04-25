@@ -79,68 +79,34 @@
 <section id="news" class="grid wide">
     <h2 class="heading">NEWS</h2>
     <div id="news-item" class="row">
-        {{!-- {{#each news}} --}}
-        <div class="col l-3 m-4 s-12">
-            <div class="row no-gutters">
-                <div class="news-image col l-12 m-12 s-6">
-                    <img src="{{this.img}}images/general/intro_tempura.jpg" alt="">
-                </div>
-                <div class="news-title col l-12 m-12 s-6">
-                    <h3>{{this.name}}Helo fck you</h3>
-                    <p>{{this.date}}20 - 10 - 2022</p>
-                    <button onclick="newsOpen('{{this._id}}')">Detail</button>
-                </div>
-            </div>
-        </div>
-        {{!-- {{/each}} --}}
-        <div class="col l-3 m-4 s-12">
-            <div class="row no-gutters">
-                <div class="news-image col l-12 m-12 s-6">
-                    <img src="{{this.img}}images/general/intro_tempura.jpg" alt="">
-                </div>
-                <div class="news-title col l-12 m-12 s-6">
-                    <h3>{{this.name}}Helo fck you</h3>
-                    <p>{{this.date}}20 - 10 - 2022</p>
-                    <button onclick="newsOpen('{{this._id}}')">Detail</button>
+        {{#each news}}
+            <div class="col l-3 m-4 s-12">
+                <div class="row no-gutters">
+                    <div class="news-image col l-12 m-12 s-6">
+                        <img src="{{this.image}}" alt="{{this.name}}">
+                    </div>
+                    <div class="news-title col l-12 m-12 s-6">
+                        <h3>{{this.name}}</h3>
+                        <p>{{this.date}}</p>
+                        <button onclick="newsOpen('{{this._id}}')">Detail</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col l-3 m-4 s-12">
-            <div class="row no-gutters">
-                <div class="news-image col l-12 m-12 s-6">
-                    <img src="{{this.img}}images/general/intro_tempura.jpg" alt="">
-                </div>
-                <div class="news-title col l-12 m-12 s-6">
-                    <h3>{{this.name}}Helo fck you</h3>
-                    <p>{{this.date}}20 - 10 - 2022</p>
-                    <button onclick="newsOpen('{{this._id}}')">Detail</button>
-                </div>
-            </div>
-        </div>
-        <div class="col l-3 m-4 s-12">
-            <div class="row no-gutters">
-                <div class="news-image col l-12 m-12 s-6">
-                    <img src="{{this.img}}images/general/intro_tempura.jpg" alt="">
-                </div>
-                <div class="news-title col l-12 m-12 s-6">
-                    <h3>{{this.name}}Helo fck you</h3>
-                    <p>{{this.date}}20 - 10 - 2022</p>
-                    <button onclick="newsOpen('{{this._id}}')">Detail</button>
-                </div>
-            </div>
-        </div>
+        {{/each}}
     </div>
-        {{!-- {{#each news}}
-            <div class="news-detail" id="{{this._id}}" style="display: none;">
-                <button class="news-close" onclick="newsClose('{{this._id}}')">X</button>
-                <img src="{{this.img}}" alt="{{this.name}}">
-                <div>
-                    <h3>{{this.name}}</h3>
-                    <p class="news-date">{{this.date}}</p>
-                    <p class="news-content">{{this.content}}</p>
-                </div>
+    {{#each news}}
+        <div class="news-detail row" id="{{this._id}}" style="display: none;">
+            <button class="news-close" onclick="newsClose('{{this._id}}')">X</button>
+            <div class="news-detail-image col l-6 m-12 s-12">
+                <img src="{{this.image}}" alt="{{this.name}}">
             </div>
-        {{/each}} --}}
+            <div class="news-detail-content col l-6 m-12 s-12">
+                <h3>{{this.name}}</h3>
+                <p class="news-date">{{this.date}}</p>
+                <p class="news-content">{{this.content}}</p>
+            </div>
+        </div>
+    {{/each}}
 </section>
 
 <!-- introstrative Images -->

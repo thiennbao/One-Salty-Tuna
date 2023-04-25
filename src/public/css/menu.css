@@ -140,8 +140,8 @@
 
 /* For PC */
 @media (min-width: 1024px) {
-    #dishes > div:hover img {
-        animation: dish-hover 0.5s forwards;
+    #dishes > div > div:hover {
+        animation: shadow 0.5s forwards;
     }
 }
 

@@ -68,3 +68,17 @@ for (let i = 0; i < dishImage.length; i++) {
         dishImage[i].firstElementChild.style.animation = 'zoom-out 0.75s forwards';
     };
 };
+
+// News
+$('.news-title p').each( (index, item) => {
+    var dateString = (new Date($(item).text())).toDateString()
+    $(item).text(dateString)
+    $($('.news-date')[index]).text(dateString)
+})
+
+function newsOpen(id) {
+    $(`#${id}`).show()  
+}
+function newsClose(id) {
+    $(`#${id}`).hide()
+}

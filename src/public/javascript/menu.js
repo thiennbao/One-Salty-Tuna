@@ -1,37 +1,24 @@
 
+const dishesElm = $('#dishes > div > div')
+
 // Menu searching
-function renderData(data) {
-    $('#dishes').html('')
-    data.forEach(dish => {
-    $('#dishes').append(`
-        <div class="${dish.type} col l-3 m-4 s-6">
-            <div>
-                <img src="${dish.image}" alt="${dish.name}">
-                <p class="dish-name">${dish.name}</p>
-                <p class="describe">${dish.description}</p>
-                <p class="price">${dish.price} $</p>
-                <div class="pick"><p>-</p><p>0</p><p>+</p></div>
-            </div>
-        </div>`)
-    })
-}
 $('#searchBtn').click(() => {
-    $.ajax({
-        url:`menu?key=${$('#key').val()}&price=${$('#price').val()}`,
-        type: 'GET'
+    const key = RegExp($('#key').val(), 'i')
+    const price = $('#price').val()
+
+    dishesElm.parent().show()
+    dishesElm.each((index, dish) => {
+        if (!key.test($(dish).children('.dish-name').text()) && !key.test($(dish).children('.describe').text())) {
+            $(dish).parent().hide()
+        }
+        if (price && Number($(dish).children('.price').text().replace('$', '')) > price) {
+            $(dish).parent().hide()
+        }
     })
-    .then(data => {
-        renderData(data)
-    })
+
 })
 $('#clearBtn').click(() => {
-    $.ajax({
-        url:`menu?key=&price=`,
-        type: 'GET'
-    })
-    .then(data => {
-        renderData(data)
-    })
+    dishesElm.parent().show()
 })
 
 // Cart table
@@ -42,11 +29,10 @@ class Dish {
         this.quantity = quantity
     }
 }
-const dishesHTML = $('#dishes > div > div')
 const dishes = []
 const cart = []
 
-dishesHTML.each((index, dish) => {
+dishesElm.each((index, dish) => {
     // Get dish info
     dishes[index] = new Dish(dish.children[1].innerText, Number(dish.children[3].innerText.replace('$', '')), 0)
 

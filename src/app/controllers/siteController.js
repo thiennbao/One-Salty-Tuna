@@ -2,8 +2,9 @@
 const mongooseUtil = require('../../util/mongooseUtil')
 const handlebarsUtil = require('../../util/handlebarsUtil')
 
-const User = require('../../database/model/user')
 const Dish = require('../../database/model/dish')
+const News = require('../../database/model/news')
+const User = require('../../database/model/user')
 const Order = require('../../database/model/order')
 
 class SiteController {
@@ -13,6 +14,7 @@ class SiteController {
         res.render('home', {
             page: 'home',
             dishes: await mongooseUtil.getRandom(Dish, 8),
+            news: await mongooseUtil.getLatest(News, 4),
             phone: handlebarsUtil.getPhone(req)
         })
     }
@@ -27,23 +29,11 @@ class SiteController {
 
     // Menu
     async menu(req, res) {
-        if (!Object.keys(req.query).length) {
-            // Menu page
-            res.render('menu', {
-                page: 'menu',
-                dishes: await mongooseUtil.getData(Dish),
-                phone: handlebarsUtil.getPhone(req)
-            })
-        } else {
-            // Menu searching
-            var dishes
-            if (req.query.price) {
-                dishes = await Dish.find().or([{name: RegExp(req.query.key, 'i')}, {description: RegExp(req.query.key, 'i')}]).where('price').lte(req.query.price)
-            } else {
-                dishes = await Dish.find().or([{name: RegExp(req.query.key, 'i')}, {description: RegExp(req.query.key, 'i')}])
-            }
-            res.send(dishes)
-        }
+        res.render('menu', {
+            page: 'menu',
+            dishes: await mongooseUtil.getData(Dish),
+            phone: handlebarsUtil.getPhone(req)
+        })
     }
 
     // Contact
