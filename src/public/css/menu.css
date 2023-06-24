@@ -34,6 +34,7 @@
 }
 #dishes img {
     width: 100%;
+    aspect-ratio: 10 / 7;
 }
 #dishes p {
     margin: 10px 10% 0;
@@ -64,11 +65,11 @@
 }
 #dishes .pick p {
     display: inline-block;
-    width: 34px;
+    width: 35px;
+    height: 35px;
     line-height: 30px;
     border: var(--main-color) solid 2px;
     border-radius: 50%;
-    text-align: center;
     margin: 10px 3px;
     cursor: pointer;
 }
@@ -94,6 +95,7 @@
     margin: auto;
     padding: 3% 5% 10%;
     border: var(--main-color) solid 3px;
+    border-radius: 50px;
 }
 #cart-table thead, tfoot {
     background-color: var(--main-color);
@@ -127,6 +129,7 @@
     text-align: center;
     border: none;
     outline: none;
+    border-radius: 10px;
 }
 
 /* Outro Images */
@@ -187,5 +190,7 @@
     #cart-container {
         width: 95%;
         padding: 3% 0 20%;
+        border-width: 1px;
+        border-radius: 20px;
     }
 }

@@ -20,9 +20,14 @@ class SiteController {
     }
     
     // About
-    about(req, res) {
+    async about(req, res) {
         res.render('about', {
             page: 'about',
+            counter: {
+                staff: await User.find({role: 'staff'}).count(),
+                dish: await Dish.count(),
+                user: await User.find({role: 'user'}).count()
+            },
             phone: handlebarsUtil.getPhone(req)
         })
     }

@@ -13,7 +13,8 @@
     flex-shrink: 0;
     background-color: white;
     border-radius: 10px;
-    height: 90%;
+    padding: 30px 0;
+    min-height: 75%;
 }
 #catalog {
     border-right: gray solid 1px;
@@ -36,7 +37,6 @@
 }
 #form-container {
     padding: 0 30px;
-    position: relative;
 }
 #form-container h3 {
     font-size: 25px;
@@ -60,16 +60,15 @@
     border-bottom: var(--main-color) solid 1px;
 }
 #form-container input[type="submit"] {
-    position: absolute;
-    left: 50%;
-    bottom: 5%;
     width: 50%;
-    transform: translateX(-50%);
     background-color: var(--main-color);
     color: white;
     font-weight: bold;
     border: none;
     border-radius: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
 }
 #form-container .form-msg {
     display: block;
